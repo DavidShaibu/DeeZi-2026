@@ -46,14 +46,14 @@ export const schedule = [
     id: "ceremony",
     date: "Friday, October 9, 2026",
     time: "2:00 PM",
-    title: "Ceremony",
+    title: "Wedding Ceremony",
     description:
       "Join us at St. Thomas Catholic Church as we are married. The ceremony begins at 2:00 in the afternoon.",
     venue: "St. Thomas Catholic Church",
     addressLines: ["1323 16th St", "Huntsville, Texas, USA"],
     mapsAddress: "1323 16th St, Huntsville, TX",
     calendar: {
-      title: "Zikora & David — Ceremony",
+      title: "Zikora & David — Wedding Ceremony",
       start: "20261009T140000",
       end: "20261009T160000",
       details:

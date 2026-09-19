@@ -80,8 +80,8 @@ try {
     "schedule shows the church photo",
   );
   await assert(
-    (await page.getByRole("heading", { name: "Ceremony" }).count()) === 1,
-    "schedule lists the ceremony",
+    (await page.getByRole("heading", { name: "Wedding Ceremony" }).count()) === 1,
+    "schedule lists the wedding ceremony",
   );
   await assert(
     (await page.getByText("St. Thomas Catholic Church").count()) >= 1,
