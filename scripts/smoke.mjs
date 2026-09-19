@@ -28,8 +28,12 @@ try {
     "our story breaks with one chapter photo",
   );
   await assert(
-    (await page.getByText("Eventually.").count()) >= 1,
-    "photos sit after she said yes",
+    (await page.getByText("I asked her to be my girlfriend.").count()) >= 1,
+    "story includes asking her to be his girlfriend",
+  );
+  await assert(
+    (await page.getByText("Chief Toaster").count()) >= 1,
+    "story ends with Chief Toaster",
   );
   await page.getByTestId("open-menu").click();
   await page.getByTestId("site-menu").waitFor({ state: "visible" });

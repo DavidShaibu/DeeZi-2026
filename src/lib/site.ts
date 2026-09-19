@@ -117,7 +117,7 @@ export const contacts = [
 export const ourStory = [
   {
     speaker: "David",
-    text: "We first met at Toastmasters in December 2023, when I had just joined. It was my first meeting, and Zikora was giving a speech. I remember listening to her speak and thinking, okay, I need to get this girl’s number. She had this confidence and grace about her, and I was definitely interested.\n\nSo, I got her number.",
+    text: "We first met at Toastmasters in December 2023, when I had just joined (Toastmasters is a club where people practise & improve their public speaking). It was my first meeting, and Zikora was giving a speech. I remember listening to her speak and thinking, okay, I need to get her number. She had this confidence and grace about her, and I was definitely interested.\n\nSo, I got her number.",
   },
   {
     speaker: "Zikora",
@@ -129,23 +129,23 @@ export const ourStory = [
   },
   {
     speaker: "Zikora",
-    text: "I had posted a throwback picture with my friend Subomi for her birthday, and David replied, thanking God for my “glow up.”",
+    text: "I had posted a throwback picture with my very dear friend Subomi for her birthday, and David replied, thanking God for my “glow up.”",
   },
   {
     speaker: "David",
-    text: "I genuinely thought I was being nice.",
+    text: "I genuinely thought I was being nice💀😂.",
   },
   {
     speaker: "Zikora",
-    text: "He was not. 😂\n\nNaturally, I had to correct him because there was nothing to “glow up” from. I was beautiful then, and I was beautiful now. So, that became my opportunity to teach him how to compliment a lady properly.",
+    text: "Thinkers 😂…, I made sure to school him😌😂.",
   },
   {
     speaker: "David",
-    text: "And somehow, I kept talking to her after that.",
+    text: "The lesson was well learnt 😂 You’ve been beautiful then, you’re beautiful now, and you’ll still be beautiful tomorrow and 100 years from now.\n\nBut somehow, we kept talking to after that.",
   },
   {
     speaker: "Zikora",
-    text: "And somehow, I kept replying.\n\nThat little exchange turned into regular conversations — texts, voice notes, random conversations that somehow never seemed to end. We just clicked. There wasn’t any pressure to impress each other or act a certain way. We were comfortable being ourselves from the beginning.",
+    text: "That little exchange turned into regular conversations - texts, voice notes, random conversations that somehow never seemed to end. We just clicked. There wasn’t any pressure to impress each other or act a certain way. We were comfortable being ourselves from the beginning.",
   },
   {
     speaker: "David",
@@ -160,18 +160,6 @@ export const ourStory = [
     text: "A couple of weeks later, I asked her to be my girlfriend.",
   },
   {
-    speaker: "Zikora",
-    text: "And after giving it some serious thought…",
-  },
-  {
-    speaker: "David",
-    text: "She said yes.",
-  },
-  {
-    speaker: "Zikora",
-    text: "Eventually. 😂",
-  },
-  {
     photos: [
       {
         src: "/images/story-deck.jpg",
@@ -183,19 +171,15 @@ export const ourStory = [
   },
   {
     speaker: "Zikora",
-    text: "Since then, we’ve just been figuring things out together. We’ve learned a lot about each other, grown together, had plenty of laughs, and learned that being together is as much about friendship as it is about love.",
+    text: "Since then, we’ve learned a lot more about each other, grown together, had plenty of laughs, and learned that being together is as much about friendship as it is about love.",
   },
   {
     speaker: "David",
-    text: "And somehow, what started with a Toastmasters meeting and a questionable “glow up” comment has brought us here.",
+    text: "And somehow, a Toastmasters meeting and a questionable “glow up” comment has brought us here. It’s been a lot of peace, shared happiness, and constantly pushing each other to be better.",
   },
   {
     speaker: "Zikora",
-    text: "Which neither of us saw coming at the time.",
-  },
-  {
-    speaker: "Both",
-    text: "And that’s our story — pretty simple, slightly unexpected, and very much ours.",
+    text: "And I wouldn’t have it any other way. From a fellow Toastmaster to Chief Toaster, nice one 🙌🏾😂",
   },
 ] as const;
 
