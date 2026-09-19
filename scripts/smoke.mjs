@@ -117,7 +117,7 @@ try {
   );
 
   await page.getByTestId("open-menu").click();
-  await page.getByRole("link", { name: "RSVP", exact: true }).first().click();
+  await page.getByTestId("site-menu").getByRole("link", { name: "RSVP", exact: true }).click();
   await page.waitForURL("**/rsvp");
   const rsvpHref = await page.getByTestId("rsvp-form-link").getAttribute("href");
   await assert(
@@ -126,7 +126,7 @@ try {
   );
 
   await page.getByTestId("open-menu").click();
-  await page.getByRole("link", { name: "Contact Us" }).click();
+  await page.getByTestId("site-menu").getByRole("link", { name: "Contact Us" }).click();
   await page.waitForURL("**/contact");
   await assert(
     (await page.getByRole("heading", { name: "Chief Bridesmaid" }).count()) ===
