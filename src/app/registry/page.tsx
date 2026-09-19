@@ -13,10 +13,10 @@ export default function RegistryPage() {
 
       <figure className="overflow-hidden rounded-2xl">
         <Image
-          src="/images/our-story.png"
+          src="/images/registry-hero.jpg"
           alt={`${couple.names}`}
-          width={1086}
-          height={1448}
+          width={939}
+          height={1046}
           className="h-auto w-full object-cover object-top"
           priority
         />
