@@ -15,8 +15,8 @@ export default function RegistryPage() {
         <Image
           src="/images/registry-hero.jpg"
           alt={`${couple.names}`}
-          width={1142}
-          height={1401}
+          width={1169}
+          height={1710}
           className="h-auto w-full object-cover object-top"
           priority
         />
