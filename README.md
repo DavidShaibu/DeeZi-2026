@@ -20,6 +20,14 @@ npm run dev
 
 Open [http://localhost:43180](http://localhost:43180).
 
+To confirm the menu, registry, and contact form in a real browser:
+
+```bash
+npm run build
+npm start
+npm test
+```
+
 Production build:
 
 ```bash

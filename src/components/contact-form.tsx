@@ -39,7 +39,7 @@ export function ContactForm() {
 
   if (status === "sent") {
     return (
-      <div className="rounded-2xl border border-[#e8ddd4] bg-[#fbf7f2] px-6 py-10 text-center">
+      <div className="rounded-2xl border border-[#e8ddd4] bg-[#fbf7f2] px-6 py-10 text-center" data-testid="contact-thanks">
         <p className="font-script text-4xl text-[#2a2a2a]">Thank you</p>
         <p className="font-serif mx-auto mt-4 max-w-sm text-[1.05rem] leading-8 text-[#3a3a3a]">
           We received your note and will write back as soon as we can. We cannot
@@ -116,13 +116,14 @@ export function ContactForm() {
           Something went wrong. Please try again, or email us directly.
         </p>
       ) : null}
-      <Button
+      <button
         type="submit"
+        data-testid="contact-submit"
         disabled={status === "sending"}
-        className="h-12 w-full rounded-full bg-[#2a2a2a] text-base text-white hover:bg-[#3a3a3a]"
+        className="h-12 w-full rounded-full bg-[#2a2a2a] text-base font-medium text-white transition hover:bg-[#3a3a3a] disabled:opacity-60"
       >
         {status === "sending" ? "Sending…" : "Send message"}
-      </Button>
+      </button>
     </form>
   );
 }

@@ -55,9 +55,10 @@ export default function RegistryPage() {
               </div>
               <button
                 type="button"
+                data-testid="contribute"
                 className={
                   isPledged
-                    ? "mt-4 inline-flex h-10 items-center rounded-full bg-[#f4efe9] px-5 text-sm font-medium text-[#2a2a2a]"
+                    ? "mt-4 inline-flex h-10 items-center rounded-full border border-[#2a2a2a] bg-[#f4efe9] px-5 text-sm font-medium text-[#2a2a2a]"
                     : "mt-4 inline-flex h-10 items-center rounded-full border border-[#2a2a2a] bg-white px-5 text-sm font-medium text-[#2a2a2a] transition hover:bg-[#f4efe9]"
                 }
                 onClick={() => setPledged(item.title)}
@@ -70,7 +71,7 @@ export default function RegistryPage() {
       </ul>
 
       {pledged ? (
-        <p className="font-serif mt-6 text-center text-[1.1rem] leading-8 text-[#3a3a3a]">
+        <p className="font-serif mt-6 text-center text-[1.1rem] leading-8 text-[#3a3a3a]" data-testid="registry-thanks">
           Thank you. In this preview, contributions are a note of intent only —
           no payment is collected.
         </p>
