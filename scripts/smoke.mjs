@@ -156,7 +156,7 @@ try {
   );
 
   await page.getByTestId("open-menu").click();
-  await page.getByRole("link", { name: "Where to Stay" }).click();
+  await page.getByTestId("site-menu").getByRole("link", { name: "Where to Stay" }).click();
   await page.waitForURL("**/where-to-stay");
   await assert(
     (await page.getByRole("heading", { name: "Where to Stay" }).count()) === 1,
