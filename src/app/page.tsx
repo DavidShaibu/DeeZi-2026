@@ -48,14 +48,10 @@ export default function OurStoryPage() {
                 className="my-2 flex flex-col gap-6"
                 data-testid="story-chapter-photos"
               >
-                {beat.photos.map((photo, photoIndex) => (
+                {beat.photos.map((photo) => (
                   <figure
                     key={photo.src}
-                    className={
-                      photoIndex === 0
-                        ? "overflow-hidden rounded-2xl sm:mr-8"
-                        : "overflow-hidden rounded-2xl sm:ml-8"
-                    }
+                    className="overflow-hidden rounded-2xl"
                   >
                     <Image
                       src={photo.src}

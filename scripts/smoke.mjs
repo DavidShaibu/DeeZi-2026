@@ -24,8 +24,8 @@ try {
   );
   await assert(
     (await page.getByTestId("story-chapter-photos").locator("img").count()) ===
-      2,
-    "our story breaks with two chapter photos",
+      1,
+    "our story breaks with one chapter photo",
   );
   await assert(
     (await page.getByText("Eventually.").count()) >= 1,
