@@ -42,10 +42,10 @@ export default function SchedulePage() {
     <PageShell>
       <figure className="-mx-6 -mt-8 mb-8 overflow-hidden sm:-mx-8 sm:-mt-10">
         <Image
-          src="/images/schedule-church.jpg"
+          src="/images/schedule-church-v2.jpg"
           alt="St. Thomas Catholic Church"
-          width={1148}
-          height={862}
+          width={1026}
+          height={962}
           className="h-auto w-full object-cover object-center"
           priority
         />
