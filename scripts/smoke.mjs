@@ -88,12 +88,12 @@ try {
     "contact lists the family representative",
   );
   await assert(
-    (await page.getByText("Mrs. Shaibu (Groom's Family)").count()) >= 1,
-    "contact lists Mrs. Shaibu for the groom’s family",
+    (await page.getByText("Grace Shaibu (Groom's Family)").count()) >= 1,
+    "contact lists Grace Shaibu for the groom’s family",
   );
   await assert(
     (await page.getByRole("link", { name: "+234 802 321 6384" }).count()) === 1,
-    "contact lists Mrs. Shaibu’s number",
+    "contact lists Grace Shaibu’s number",
   );
 
   await page.getByTestId("open-menu").click();

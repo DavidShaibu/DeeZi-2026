@@ -66,7 +66,7 @@ export const contacts = [
   },
   {
     role: "Family Representative",
-    name: "Mrs. Shaibu",
+    name: "Grace Shaibu",
     detail: "Groom's Family",
     phone: "+234 802 321 6384",
     tel: "+2348023216384",
