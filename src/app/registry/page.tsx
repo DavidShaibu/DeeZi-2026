@@ -31,8 +31,8 @@ export default function RegistryPage() {
         data-testid="registry-message"
       >
         A lot of you have asked how you can be a part of our {registry.hashtag}.
-        If you&apos;d like to contribute, we are accepting CASH donations.
-        Thanks and God bless! 😊
+        If you’d like to support us as we begin this new journey together,
+        we’ll be accepting cash gifts. Thank you so much, and God bless you! ❤️
       </p>
 
       <div

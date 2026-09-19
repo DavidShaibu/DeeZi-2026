@@ -149,9 +149,9 @@ try {
   );
   await assert(
     (await page.getByTestId("registry-message").textContent())?.includes(
-      "CASH donations",
+      "cash gifts",
     ),
-    "registry asks for cash donations",
+    "registry asks for cash gifts",
   );
   const usdText = await page.getByTestId("registry-bank").innerText();
   await assert(
