@@ -54,6 +54,19 @@ try {
     (await page.getByRole("heading", { name: "Where to Stay" }).count()) === 1,
     "where to stay heading visible",
   );
+  await assert(
+    (await page.getByText("Fairfield Inn & Suites by Marriott").count()) >= 1,
+    "fairfield hotel is listed",
+  );
+  await assert(
+    (await page.getByText("Hampton Inn & Suites").count()) >= 1,
+    "hampton hotel is listed",
+  );
+  const mapHref = await page.getByRole("link", { name: "View on Map" }).first().getAttribute("href");
+  await assert(
+    Boolean(mapHref?.includes("Huntsville") && mapHref?.includes("Ravenwood")),
+    `view on map points at Huntsville TX: ${mapHref}`,
+  );
 
   console.log("All smoke tests passed.");
 } finally {

@@ -11,11 +11,13 @@ export const weddingDateIso = "2026-10-10T16:00:00+01:00";
 export const wedding = {
   dateLabel: "Saturday, 10 October 2026",
   timeLabel: "4:00 in the afternoon",
-  city: "Lagos",
-  country: "Nigeria",
-  venueName: "Lekki Waterfront",
-  venueArea: "Lekki Phase 1",
-  mapsQuery: "Lekki Phase 1 Lagos Nigeria",
+  city: "Huntsville",
+  state: "Texas",
+  country: "USA",
+  venueName: "Huntsville",
+  venueArea: "Huntsville, TX",
+  mapsName: "Huntsville, TX",
+  mapsAddress: "Ravenwood Village Drive, Huntsville, TX 77340",
 } as const;
 
 export const navItems = [
@@ -27,31 +29,18 @@ export const navItems = [
 
 export const hotels = [
   {
-    name: "Lagos Oriental Hotel",
-    area: "Victoria Island",
-    price: "US$226",
-    note: "Closest to the welcome dinner, with lagoon views.",
-    favorite: true,
-    image: "/images/hotel-oriental.jpg",
-    mapsQuery: "Lagos Oriental Hotel Victoria Island",
+    name: "Fairfield Inn & Suites by Marriott",
+    area: "136 Ravenwood Village Drive",
+    note: "Free hot breakfast, an outdoor pool, and a short drive from downtown Huntsville.",
+    image: "/images/hotel-fairfield.jpg",
+    mapsAddress: "136 Ravenwood Village Drive, Huntsville, TX 77340",
   },
   {
-    name: "Federal Palace Hotel",
-    area: "Victoria Island",
-    price: "US$173",
-    note: "A classic waterfront stay, a short drive from both venues.",
-    favorite: false,
-    image: "/images/hotel-palace.jpg",
-    mapsQuery: "Federal Palace Hotel and Casino Lagos",
-  },
-  {
-    name: "Lekki Shores Suites",
-    area: "Lekki Phase 1",
-    price: "US$128",
-    note: "Quieter boutique rooms nearest the ceremony.",
-    favorite: false,
-    image: "/images/hotel-lekki.jpg",
-    mapsQuery: "Lekki Phase 1 hotels Lagos",
+    name: "Hampton Inn & Suites",
+    area: "120 Ravenwood Village Drive",
+    note: "Right next door on Ravenwood Village Drive, with free breakfast and an outdoor pool.",
+    image: "/images/hotel-hampton.jpg",
+    mapsAddress: "120 Ravenwood Village Drive, Huntsville, TX 77340",
   },
 ] as const;
 
@@ -144,6 +133,3 @@ export const ourStory = [
   },
 ] as const;
 
-export function mapsUrl(query: string) {
-  return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
-}

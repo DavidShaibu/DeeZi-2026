@@ -5,11 +5,11 @@ A wedding website for Zikora and David, designed in the style of a floral WithJo
 There are four pages:
 
 - **Our Story** — how they met, in their own words
-- **Where to Stay** — Lagos hotel notes, a countdown, and a map
+- **Where to Stay** — two hotels in Huntsville, Texas, a countdown, and a map
 - **Registry** — a short wish list (preview only; no payments)
 - **Contact Us** — a note to the couple
 
-Wedding date used in the countdown: **Saturday, 10 October 2026**, in Lagos.
+Wedding date used in the countdown: **Saturday, 10 October 2026**, in Huntsville, Texas.
 
 ## Run locally
 

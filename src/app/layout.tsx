@@ -41,7 +41,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <SiteHeader />
         <div className="flex flex-1 flex-col">{children}</div>
         <footer className="bg-white px-6 pb-10 text-center text-[11px] font-medium tracking-[0.22em] text-[#8a8178] uppercase">
-          Lagos · 10 October 2026
+          Huntsville, TX · 10 October 2026
         </footer>
       </body>
     </html>

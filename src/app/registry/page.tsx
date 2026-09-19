@@ -27,7 +27,7 @@ export default function RegistryPage() {
 
       <div className="mt-10">
         <StoryText>
-          Your presence in Lagos is the gift we want most. If you would still
+          Your presence in Huntsville is the gift we want most. If you would still
           like to celebrate with something extra, we have a short list of wishes
           for the honeymoon and the home we are making together.
         </StoryText>
