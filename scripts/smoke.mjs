@@ -42,26 +42,94 @@ try {
     JSON.stringify(links) ===
       JSON.stringify([
         "Our Story",
+        "Schedule",
         "Where to Stay",
         "Registry",
         "RSVP",
         "Contact Us",
       ]),
-    `menu has five tabs: ${links.join(", ")}`,
+    `menu has six tabs: ${links.join(", ")}`,
   );
   const tabLinks = await page.locator('[data-testid="tab-bar"] a').allTextContents();
   await assert(
     JSON.stringify(tabLinks) ===
       JSON.stringify([
         "Our Story",
+        "Schedule",
         "Where to Stay",
         "Registry",
         "RSVP",
         "Contact Us",
       ]),
-    `horizontal tab bar has five tabs: ${tabLinks.join(", ")}`,
+    `horizontal tab bar has six tabs: ${tabLinks.join(", ")}`,
   );
   await page.getByTestId("close-menu").click();
+
+  await page.getByTestId("tab-bar").getByRole("link", { name: "Schedule" }).click();
+  await page.waitForURL("**/schedule");
+  await assert(
+    (await page.getByRole("heading", { name: "Schedule" }).count()) === 1,
+    "schedule heading visible",
+  );
+  await assert(
+    (await page.locator('img[alt="St. Thomas Catholic Church"]').count()) === 1,
+    "schedule shows the church photo",
+  );
+  await assert(
+    (await page.getByRole("heading", { name: "Ceremony" }).count()) === 1,
+    "schedule lists the ceremony",
+  );
+  await assert(
+    (await page.getByText("St. Thomas Catholic Church").count()) >= 1,
+    "schedule lists St. Thomas Catholic Church",
+  );
+  await assert(
+    (await page.getByText("1323 16th St").count()) >= 1,
+    "schedule lists the church street",
+  );
+  await assert(
+    (await page.getByTestId("schedule-ceremony").getByText("2:00 PM").count()) ===
+      1,
+    "ceremony is at 2:00 PM",
+  );
+  await assert(
+    (await page.getByRole("heading", { name: "Reception" }).count()) === 1,
+    "schedule lists the reception",
+  );
+  await assert(
+    (await page.getByText("Sky Blue Event Hall").count()) >= 1,
+    "schedule lists Sky Blue Event Hall",
+  );
+  await assert(
+    (await page.getByText("2514 Sam Houston Ave, Suite F").count()) >= 1,
+    "schedule lists the reception address",
+  );
+  await assert(
+    (await page.getByTestId("schedule-reception").getByText("4:00 PM").count()) ===
+      1,
+    "reception is at 4:00 PM",
+  );
+  const ceremonyCal = await page
+    .getByTestId("schedule-ceremony")
+    .getByRole("link", { name: "Add to Calendar" })
+    .getAttribute("href");
+  await assert(
+    Boolean(
+      ceremonyCal?.includes("calendar.google.com") &&
+        ceremonyCal?.includes("1323"),
+    ),
+    "ceremony calendar link includes the church",
+  );
+  const directionsHref = await page
+    .getByTestId("schedule-ceremony")
+    .getByRole("link", { name: "Directions" })
+    .getAttribute("href");
+  await assert(
+    Boolean(
+      directionsHref?.includes("16th") && directionsHref?.includes("Huntsville"),
+    ),
+    `ceremony directions point at the church: ${directionsHref}`,
+  );
 
   await page.getByTestId("tab-bar").getByRole("link", { name: "Registry" }).click();
   await page.waitForURL("**/registry");

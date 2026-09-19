@@ -9,7 +9,8 @@ export default function NotFound() {
       <PageTitle>Lost our way</PageTitle>
       <StoryText>
         That page is not part of the wedding site. Head back to our story, or
-        use the menu to find where to stay, the registry, or how to reach us.
+        use the menu to find the schedule, where to stay, the registry, or how
+        to reach us.
       </StoryText>
       <p className="mt-8 text-center">
         <Link

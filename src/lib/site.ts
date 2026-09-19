@@ -34,11 +34,56 @@ export const socialPreview = {
 
 export const navItems = [
   { href: "/", label: "Our Story" },
+  { href: "/schedule", label: "Schedule" },
   { href: "/where-to-stay", label: "Where to Stay" },
   { href: "/registry", label: "Registry" },
   { href: "/rsvp", label: "RSVP" },
   { href: "/contact", label: "Contact Us" },
 ] as const;
+
+export const schedule = [
+  {
+    id: "ceremony",
+    date: "Friday, October 9, 2026",
+    time: "2:00 PM",
+    title: "Ceremony",
+    description:
+      "Join us at St. Thomas Catholic Church as we are married. The ceremony begins at 2:00 in the afternoon.",
+    venue: "St. Thomas Catholic Church",
+    addressLines: ["1323 16th St", "Huntsville, Texas, USA"],
+    mapsAddress: "1323 16th St, Huntsville, TX",
+    calendar: {
+      title: "Zikora & David — Ceremony",
+      start: "20261009T140000",
+      end: "20261009T160000",
+      details:
+        "Ceremony at St. Thomas Catholic Church. Reception follows at 4:00 PM at Sky Blue Event Hall.",
+    },
+  },
+  {
+    id: "reception",
+    date: "Friday, October 9, 2026",
+    time: "4:00 PM",
+    title: "Reception",
+    description:
+      "Celebrate with us at Sky Blue Event Hall after the ceremony. Reception begins at 4:00 in the afternoon.",
+    venue: "Sky Blue Event Hall",
+    addressLines: ["2514 Sam Houston Ave, Suite F", "Huntsville, Texas, USA"],
+    mapsAddress: "2514 Sam Houston Ave Suite F, Huntsville, TX",
+    calendar: {
+      title: "Zikora & David — Reception",
+      start: "20261009T160000",
+      end: "20261009T210000",
+      details:
+        "Reception at Sky Blue Event Hall, 2514 Sam Houston Ave, Suite F, Huntsville, Texas.",
+    },
+  },
+] as const;
+
+export const dayNotes = {
+  colors: "Burgundy and olive green",
+  dressCode: "Cocktail elegance",
+} as const;
 
 export const rsvpFormUrl =
   "https://docs.google.com/forms/d/e/1FAIpQLSdAFelBmuq0qIyOvgol8j7GdPoqfMgxALjJuv9-IJenMgTjOg/viewform?usp=sharing&ouid=105978498231273877918";
