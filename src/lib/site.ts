@@ -174,10 +174,10 @@ export const ourStory = [
   {
     photos: [
       {
-        src: "/images/story-dance.jpg",
-        alt: "Zikora and David dancing",
-        width: 1170,
-        height: 2008,
+        src: "/images/story-deck.jpg",
+        alt: "Zikora and David on the deck",
+        width: 1169,
+        height: 1710,
       },
     ],
   },
