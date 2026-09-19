@@ -33,9 +33,28 @@ try {
 
   await page.getByRole("link", { name: "Registry" }).click();
   await page.waitForURL("**/registry");
-  await page.getByTestId("contribute").first().click();
-  await page.getByTestId("registry-thanks").waitFor({ state: "visible" });
-  await assert(true, "registry contribute shows thank-you");
+  await assert(
+    (await page.getByTestId("registry-message").textContent())?.includes(
+      "CASH donations",
+    ),
+    "registry asks for cash donations",
+  );
+  await assert(
+    (await page.getByText("Navy Federal").count()) >= 1,
+    "registry lists Navy Federal",
+  );
+  await assert(
+    (await page.getByText("7226546765").count()) >= 1,
+    "registry shows the account number",
+  );
+  await assert(
+    (await page.getByText("256074974").count()) >= 1,
+    "registry shows the routing number",
+  );
+  await assert(
+    (await page.getByText("8172333219").count()) >= 1,
+    "registry shows the Zelle number",
+  );
 
   await page.getByTestId("open-menu").click();
   await page.getByRole("link", { name: "Contact Us" }).click();

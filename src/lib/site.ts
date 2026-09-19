@@ -10,6 +10,7 @@ export const weddingDateIso = "2026-10-10T16:00:00+01:00";
 
 export const wedding = {
   dateLabel: "Saturday, 10 October 2026",
+  dateLong: "Saturday, October 10, 2026",
   timeLabel: "4:00 in the afternoon",
   city: "Huntsville",
   state: "Texas",
@@ -44,23 +45,16 @@ export const hotels = [
   },
 ] as const;
 
-export const registryItems = [
-  {
-    title: "Honeymoon in Zanzibar",
-    detail: "Help send us to the Indian Ocean after the dancing is done.",
-    amount: "Any amount",
+export const registry = {
+  hashtag: "#ZikoraAndDavid",
+  bank: {
+    name: "Navy Federal",
+    accountName: "Chidalu Mozie",
+    accountNumber: "7226546765",
+    routingNumber: "256074974",
   },
-  {
-    title: "A long lunch for two",
-    detail: "A reservation somewhere we have been meaning to try.",
-    amount: "US$120",
-  },
-  {
-    title: "Linens for the new house",
-    detail: "Soft sheets, a throw, and something that feels like home.",
-    amount: "US$85",
-  },
-] as const;
+  zelle: "8172333219",
+} as const;
 
 export const ourStory = [
   {

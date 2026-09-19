@@ -6,7 +6,7 @@ There are four pages:
 
 - **Our Story** — how they met, in their own words
 - **Where to Stay** — two hotels in Huntsville, Texas, a countdown, and a map
-- **Registry** — a short wish list (preview only; no payments)
+- **Registry** — cash donations via Navy Federal and Zelle
 - **Contact Us** — a note to the couple
 
 Wedding date used in the countdown: **Saturday, 10 October 2026**, in Huntsville, Texas.
@@ -20,7 +20,7 @@ npm run dev
 
 Open [http://localhost:43180](http://localhost:43180).
 
-To confirm the menu, registry, and contact form in a real browser:
+To confirm the menu, registry details, and contact form in a real browser:
 
 ```bash
 npm run build
