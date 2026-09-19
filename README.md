@@ -1,6 +1,6 @@
-# Zikora & David
+# DeeZi 2026
 
-A wedding website for Zikora and David, designed in the style of a floral WithJoy page: cream header, watercolor blooms, script names, and a slide-out menu.
+Wedding website for Zikora and David (`#DeeZi'26`), designed in the style of a floral WithJoy page: cream header, watercolor blooms, script names, and a slide-out menu.
 
 There are four pages:
 
@@ -34,6 +34,17 @@ Production build:
 npm run build
 npm start
 ```
+
+## Deploy on Vercel
+
+This is a standard Next.js app. In Vercel:
+
+1. Import the **DeeZi-2026** GitHub repository
+2. Leave the framework preset as **Next.js**
+3. Do not add environment variables — none are required
+4. Deploy
+
+Vercel will run `next build`. The local `npm start` port in `package.json` is only for development here and is ignored on Vercel.
 
 ## Notes
 
