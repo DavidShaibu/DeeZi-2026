@@ -25,7 +25,7 @@ export const socialPreview = {
   title: "Zikora & David | 09.10.2026",
   description: `Wedding details for ${couple.names}. Join us in ${wedding.city} on ${wedding.dateLabel}.`,
   image: {
-    url: "/images/og-preview.jpg",
+    url: "/images/og-preview-v2.jpg",
     width: 1200,
     height: 630,
     alt: `${couple.names}`,
