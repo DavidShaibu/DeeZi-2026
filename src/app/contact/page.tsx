@@ -2,10 +2,18 @@ import type { Metadata } from "next";
 
 import { PageShell } from "@/components/page-shell";
 import { PageTitle } from "@/components/page-title";
-import { contacts } from "@/lib/site";
+import { contacts, socialPreview } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Contact Us",
+  openGraph: {
+    title: socialPreview.title,
+    images: [socialPreview.image],
+  },
+  twitter: {
+    title: socialPreview.title,
+    images: [socialPreview.image.url],
+  },
 };
 
 export default function ContactPage() {

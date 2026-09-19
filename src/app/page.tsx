@@ -3,10 +3,18 @@ import type { Metadata } from "next";
 
 import { PageShell } from "@/components/page-shell";
 import { PageTitle } from "@/components/page-title";
-import { couple, ourStory } from "@/lib/site";
+import { couple, ourStory, socialPreview } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Our Story",
+  openGraph: {
+    title: socialPreview.title,
+    images: [socialPreview.image],
+  },
+  twitter: {
+    title: socialPreview.title,
+    images: [socialPreview.image.url],
+  },
 };
 
 function isPhotoBreak(

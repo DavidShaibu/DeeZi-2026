@@ -21,6 +21,17 @@ export const wedding = {
   mapsAddress: "Ravenwood Village Drive, Huntsville, TX 77340",
 } as const;
 
+export const socialPreview = {
+  title: "Zikora & David | 09.10.2026",
+  description: `Wedding details for ${couple.names}. Join us in ${wedding.city} on ${wedding.dateLabel}.`,
+  image: {
+    url: "/images/og-preview.jpg",
+    width: 1200,
+    height: 630,
+    alt: `${couple.names}`,
+  },
+} as const;
+
 export const navItems = [
   { href: "/", label: "Our Story" },
   { href: "/where-to-stay", label: "Where to Stay" },

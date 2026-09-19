@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Cormorant_Garamond, DM_Sans, Great_Vibes } from "next/font/google";
 
 import { SiteHeader } from "@/components/site-header";
-import { couple, wedding } from "@/lib/site";
+import { couple, socialPreview } from "@/lib/site";
 
 import "./globals.css";
 
@@ -24,11 +24,26 @@ const sans = DM_Sans({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://dee-zi-2026.vercel.app"),
   title: {
     default: `${couple.names} — Wedding`,
     template: `%s · ${couple.names}`,
   },
-  description: `Wedding details for ${couple.names}. Join us in ${wedding.city} on ${wedding.dateLabel}.`,
+  description: socialPreview.description,
+  openGraph: {
+    title: socialPreview.title,
+    description: socialPreview.description,
+    type: "website",
+    locale: "en_US",
+    siteName: socialPreview.title,
+    images: [socialPreview.image],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: socialPreview.title,
+    description: socialPreview.description,
+    images: [socialPreview.image.url],
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

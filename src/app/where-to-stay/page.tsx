@@ -6,10 +6,18 @@ import { Countdown } from "@/components/countdown";
 import { MapLink } from "@/components/map-link";
 import { PageShell, StoryText } from "@/components/page-shell";
 import { PageTitle } from "@/components/page-title";
-import { hotels, wedding } from "@/lib/site";
+import { hotels, socialPreview, wedding } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Where to Stay",
+  openGraph: {
+    title: socialPreview.title,
+    images: [socialPreview.image],
+  },
+  twitter: {
+    title: socialPreview.title,
+    images: [socialPreview.image.url],
+  },
 };
 
 export default function WhereToStayPage() {
