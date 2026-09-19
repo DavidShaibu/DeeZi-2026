@@ -27,7 +27,7 @@ export default function WhereToStayPage() {
 
       <div className="relative overflow-hidden rounded-[1.6rem] bg-[#efe6d6]">
         <Image
-          src="/images/stay-map.jpg"
+          src="/images/stay-map-huntsville.jpg"
           alt={`Map of ${wedding.venueArea} with both hotels`}
           width={1600}
           height={900}
