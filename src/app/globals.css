@@ -99,3 +99,11 @@
     @apply bg-background text-foreground font-sans;
   }
 }
+
+.tab-bar {
+  scrollbar-width: none;
+}
+
+.tab-bar::-webkit-scrollbar {
+  display: none;
+}

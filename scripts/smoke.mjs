@@ -37,7 +37,16 @@ try {
   await assert(
     JSON.stringify(links) ===
       JSON.stringify(["Our Story", "Where to Stay", "Registry", "Contact Us"]),
+  await assert(
+    JSON.stringify(links) ===
+      JSON.stringify(["Our Story", "Where to Stay", "Registry", "Contact Us"]),
     `menu has four tabs: ${links.join(", ")}`,
+  );
+  const tabLinks = await page.locator('[data-testid="tab-bar"] a').allTextContents();
+  await assert(
+    JSON.stringify(tabLinks) ===
+      JSON.stringify(["Our Story", "Where to Stay", "Registry", "Contact Us"]),
+    `horizontal tab bar has four tabs: ${tabLinks.join(", ")}`,
   );
 
   await page.getByRole("link", { name: "Registry" }).click();

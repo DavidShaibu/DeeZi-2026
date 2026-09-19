@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useId, useState } from "react";
+import { useEffect, useId, useRef, useState } from "react";
 import { XIcon } from "lucide-react";
 
 import { couple, navItems } from "@/lib/site";
@@ -13,6 +13,16 @@ export function SiteHeader() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const menuId = useId();
+  const tabBarRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const active = tabBarRef.current?.querySelector("[data-active=true]");
+    active?.scrollIntoView({
+      inline: "center",
+      block: "nearest",
+      behavior: "smooth",
+    });
+  }, [pathname]);
 
   useEffect(() => {
     if (!open) {
@@ -57,22 +67,6 @@ export function SiteHeader() {
           />
         </div>
 
-        <button
-          type="button"
-          data-testid="open-menu"
-          aria-label="Open menu"
-          aria-expanded={open}
-          aria-controls={menuId}
-          onClick={() => setOpen(true)}
-          className="absolute top-5 left-4 z-30 flex size-12 items-center justify-center rounded-2xl border-0 bg-white p-0 shadow-[0_8px_24px_rgba(40,30,20,0.12)] ring-1 ring-black/5 transition hover:shadow-[0_10px_28px_rgba(40,30,20,0.16)] sm:top-6 sm:left-6"
-        >
-          <span className="flex flex-col items-center gap-[5px]">
-            <span className="block h-[2px] w-[18px] rounded-full bg-[#2b2b2b]" />
-            <span className="block h-[2px] w-[18px] rounded-full bg-[#2b2b2b]" />
-            <span className="block h-[2px] w-[18px] rounded-full bg-[#2b2b2b]" />
-          </span>
-        </button>
-
         <div className="relative z-10 mx-auto flex min-h-[210px] max-w-5xl items-center justify-center px-16 py-12 sm:min-h-[250px] md:min-h-[280px]">
           <Link
             href="/"
@@ -82,6 +76,60 @@ export function SiteHeader() {
           </Link>
         </div>
       </header>
+
+      <div className="sticky top-0 z-40 bg-white">
+        <div className="relative flex items-stretch">
+          <button
+            type="button"
+            data-testid="open-menu"
+            aria-label="Open menu"
+            aria-expanded={open}
+            aria-controls={menuId}
+            onClick={() => setOpen(true)}
+            className="relative z-10 flex h-12 w-12 shrink-0 items-center justify-center bg-white text-[#2b2b2b]"
+          >
+            <span className="flex flex-col items-center gap-[5px]">
+              <span className="block h-[1.5px] w-[16px] rounded-full bg-[#2b2b2b]" />
+              <span className="block h-[1.5px] w-[16px] rounded-full bg-[#2b2b2b]" />
+              <span className="block h-[1.5px] w-[16px] rounded-full bg-[#2b2b2b]" />
+            </span>
+          </button>
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute top-0 left-12 z-10 h-12 w-5 bg-gradient-to-r from-white to-transparent"
+          />
+          <nav
+            ref={tabBarRef}
+            data-testid="tab-bar"
+            aria-label="Page tabs"
+            className="tab-bar flex min-w-0 flex-1 items-stretch overflow-x-auto"
+          >
+            {navItems.map((item) => {
+              const active =
+                item.href === "/"
+                  ? pathname === "/"
+                  : pathname.startsWith(item.href);
+
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  data-active={active ? "true" : "false"}
+                  className={cn(
+                    "flex shrink-0 items-center px-4 text-[15px] whitespace-nowrap text-[#2b2b2b]",
+                    active
+                      ? "border-b-2 border-[#2a2a2a] font-medium"
+                      : "border-b-2 border-transparent",
+                  )}
+                >
+                  {item.label}
+                </Link>
+              );
+            })}
+          </nav>
+        </div>
+        <div className="h-px bg-[#ece8e4]" />
+      </div>
 
       {open ? (
         <>

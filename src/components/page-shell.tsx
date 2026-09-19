@@ -2,7 +2,7 @@ import type { ReactNode } from "react";
 
 export function PageShell({ children }: { children: ReactNode }) {
   return (
-    <main className="flex-1 bg-white px-6 pt-10 pb-20 sm:px-8 sm:pt-12">
+    <main className="flex-1 bg-white px-6 pt-8 pb-20 sm:px-8 sm:pt-10">
       <div className="mx-auto w-full max-w-xl">{children}</div>
     </main>
   );
