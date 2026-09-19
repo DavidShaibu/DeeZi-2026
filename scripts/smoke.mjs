@@ -67,9 +67,9 @@ try {
   );
   await assert(
     (await page.getByTestId("registry-message").textContent())?.includes(
-      "#DeeZi'26",
+      "#DeeZi26",
     ),
-    "registry uses the #DeeZi'26 hashtag",
+    "registry uses the #DeeZi26 hashtag",
   );
   await assert(
     (await page.getByTestId("registry-message").textContent())?.includes(

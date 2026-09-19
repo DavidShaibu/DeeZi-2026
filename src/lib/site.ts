@@ -82,7 +82,7 @@ export const hotels = [
 ] as const;
 
 export const registry = {
-  hashtag: "#DeeZi'26",
+  hashtag: "#DeeZi26",
   usd: {
     bank: {
       name: "Navy Federal",

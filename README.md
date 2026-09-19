@@ -1,6 +1,6 @@
 # DeeZi 2026
 
-Wedding website for Zikora and David (`#DeeZi'26`), designed in the style of a floral WithJoy page: cream header, watercolor blooms, script names, and a slide-out menu.
+Wedding website for Zikora and David (`#DeeZi26`), designed in the style of a floral WithJoy page: cream header, watercolor blooms, script names, and a slide-out menu.
 
 There are five pages:
 
