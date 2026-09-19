@@ -9,7 +9,7 @@ There are four pages:
 - **Registry** — cash donations via Navy Federal and Zelle
 - **Contact Us** — a note to the couple
 
-Wedding date used in the countdown: **Saturday, 10 October 2026**, in Huntsville, Texas.
+Wedding date used in the countdown: **Friday, 9 October 2026**, in Huntsville, Texas.
 
 ## Run locally
 

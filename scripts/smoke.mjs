@@ -34,6 +34,16 @@ try {
   await page.getByRole("link", { name: "Registry" }).click();
   await page.waitForURL("**/registry");
   await assert(
+    (await page.getByText("Friday, October 9, 2026").count()) >= 1,
+    "registry shows Friday, October 9, 2026",
+  );
+  await assert(
+    (await page.getByTestId("registry-message").textContent())?.includes(
+      "#DeeZi'26",
+    ),
+    "registry uses the #DeeZi'26 hashtag",
+  );
+  await assert(
     (await page.getByTestId("registry-message").textContent())?.includes(
       "CASH donations",
     ),

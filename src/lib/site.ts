@@ -5,12 +5,12 @@ export const couple = {
   email: "hello@zikoraanddavid.com",
 } as const;
 
-/** Saturday, 10 October 2026, 4:00pm WAT */
-export const weddingDateIso = "2026-10-10T16:00:00+01:00";
+/** Friday, 9 October 2026, 4:00pm WAT */
+export const weddingDateIso = "2026-10-09T16:00:00+01:00";
 
 export const wedding = {
-  dateLabel: "Saturday, 10 October 2026",
-  dateLong: "Saturday, October 10, 2026",
+  dateLabel: "Friday, 9 October 2026",
+  dateLong: "Friday, October 9, 2026",
   timeLabel: "4:00 in the afternoon",
   city: "Huntsville",
   state: "Texas",
@@ -46,7 +46,7 @@ export const hotels = [
 ] as const;
 
 export const registry = {
-  hashtag: "#ZikoraAndDavid",
+  hashtag: "#DeeZi'26",
   bank: {
     name: "Navy Federal",
     accountName: "Chidalu Mozie",
