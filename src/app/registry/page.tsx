@@ -40,13 +40,12 @@ export default function RegistryPage() {
         data-testid="registry-bank"
       >
         <p className="font-serif text-[1.35rem] font-semibold">USD</p>
-        <p>{usd.bank.name}</p>
         <p>Account Name: {usd.bank.accountName}</p>
         <p>Account Number: {usd.bank.accountNumber}</p>
         <p>Routing Number: {usd.bank.routingNumber}</p>
-        <p className="pt-3" data-testid="registry-zelle">
-          Zelle: {usd.zelle}
-        </p>
+        <p>Bank: {usd.bank.name}</p>
+        <p aria-hidden="true">&nbsp;</p>
+        <p data-testid="registry-zelle">Zelle: {usd.zelle}</p>
       </div>
 
       <div
@@ -54,9 +53,9 @@ export default function RegistryPage() {
         data-testid="registry-naira"
       >
         <p className="font-serif text-[1.35rem] font-semibold">Naira</p>
-        <p>{naira.bank}</p>
         <p>Account Name: {naira.accountName}</p>
         <p>Account Number: {naira.accountNumber}</p>
+        <p>Bank: {naira.bank}</p>
       </div>
     </PageShell>
   );

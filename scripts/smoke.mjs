@@ -57,8 +57,9 @@ try {
       ]),
     `horizontal tab bar has five tabs: ${tabLinks.join(", ")}`,
   );
+  await page.getByTestId("close-menu").click();
 
-  await page.getByRole("link", { name: "Registry" }).click();
+  await page.getByTestId("tab-bar").getByRole("link", { name: "Registry" }).click();
   await page.waitForURL("**/registry");
   await assert(
     (await page.getByText("Friday, October 9, 2026").count()) >= 1,
@@ -76,33 +77,43 @@ try {
     ),
     "registry asks for cash donations",
   );
+  const usdText = await page.getByTestId("registry-bank").innerText();
   await assert(
-    (await page.getByText("Navy Federal").count()) >= 1,
-    "registry lists Navy Federal",
+    usdText.includes("Account Name: Chidalu Mozie"),
+    "registry shows the USD account name",
   );
   await assert(
-    (await page.getByText("7226546765").count()) >= 1,
-    "registry shows the account number",
+    usdText.includes("Account Number: 7226546765"),
+    "registry shows the USD account number",
   );
   await assert(
-    (await page.getByText("256074974").count()) >= 1,
+    usdText.includes("Routing Number: 256074974"),
     "registry shows the routing number",
   );
   await assert(
-    (await page.getByText("8172333219").count()) >= 1,
+    usdText.includes("Bank: Navy Federal"),
+    "registry lists Navy Federal as the USD bank",
+  );
+  await assert(
+    usdText.includes("Zelle: 8172333219"),
     "registry shows the Zelle number",
   );
   await assert(
-    (await page.getByText("GTBank").count()) >= 1,
-    "registry lists GTBank for naira",
+    /Bank: Navy Federal\n\s*\nZelle:/.test(usdText),
+    "registry leaves one empty line before Zelle",
   );
+  const nairaText = await page.getByTestId("registry-naira").innerText();
   await assert(
-    (await page.getByText("Zikora Benedicta Mozie").count()) >= 1,
+    nairaText.includes("Account Name: Zikora Benedicta Mozie"),
     "registry shows the naira account name",
   );
   await assert(
-    (await page.getByText("0478810470").count()) >= 1,
+    nairaText.includes("Account Number: 0478810470"),
     "registry shows the naira account number",
+  );
+  await assert(
+    nairaText.includes("Bank: GTBank"),
+    "registry lists GTBank for naira",
   );
 
   await page.getByTestId("open-menu").click();
