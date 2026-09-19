@@ -101,18 +101,16 @@ export const registry = {
 
 export const contacts = [
   {
-    role: "Wedding Coordinator",
+    role: "Chief Bridesmaid",
     name: "Chidalu Mozie",
-    detail: "Chief Bridesmaid",
-    phone: "+1 832 941-8841",
-    tel: "+18329418841",
+    phone: "+1 203 410-8158",
+    tel: "+12034108158",
   },
   {
     role: "Family Representative",
     name: "Grace Shaibu",
-    detail: "Groom's Family",
-    phone: "+234 802 321 6384",
-    tel: "+2348023216384",
+    phone: "+234 902 848 7035",
+    tel: "+2349028487035",
   },
 ] as const;
 

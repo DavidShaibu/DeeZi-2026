@@ -118,16 +118,16 @@ try {
   await page.getByRole("link", { name: "Contact Us" }).click();
   await page.waitForURL("**/contact");
   await assert(
-    (await page.getByRole("heading", { name: "Wedding Coordinator" }).count()) ===
+    (await page.getByRole("heading", { name: "Chief Bridesmaid" }).count()) ===
       1,
-    "contact lists the wedding coordinator",
+    "contact lists the chief bridesmaid",
   );
   await assert(
-    (await page.getByText("Chidalu Mozie (Chief Bridesmaid)").count()) >= 1,
-    "contact lists Chidalu Mozie as chief bridesmaid",
+    (await page.getByText("Chidalu Mozie", { exact: true }).count()) >= 1,
+    "contact lists Chidalu Mozie",
   );
   await assert(
-    (await page.getByRole("link", { name: "+1 832 941-8841" }).count()) === 1,
+    (await page.getByRole("link", { name: "+1 203 410-8158" }).count()) === 1,
     "contact lists Chidalu’s number",
   );
   await assert(
@@ -136,11 +136,11 @@ try {
     "contact lists the family representative",
   );
   await assert(
-    (await page.getByText("Grace Shaibu (Groom's Family)").count()) >= 1,
-    "contact lists Grace Shaibu for the groom’s family",
+    (await page.getByText("Grace Shaibu", { exact: true }).count()) >= 1,
+    "contact lists Grace Shaibu",
   );
   await assert(
-    (await page.getByRole("link", { name: "+234 802 321 6384" }).count()) === 1,
+    (await page.getByRole("link", { name: "+234 902 848 7035" }).count()) === 1,
     "contact lists Grace Shaibu’s number",
   );
 

@@ -28,7 +28,7 @@ export default function ContactPage() {
               {person.role}
             </h2>
             <p className="font-serif mt-8 text-[1.15rem] leading-8 text-[#2f2f2f] sm:text-[1.25rem]">
-              {person.name} ({person.detail})
+              {person.name}
             </p>
             <a
               href={`tel:${person.tel}`}
