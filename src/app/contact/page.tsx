@@ -28,10 +28,10 @@ export default function ContactPage() {
           Or email us directly
         </p>
         <a
-          href="mailto:hello@juanitaandjohannes.com"
+          href={`mailto:${couple.email}`}
           className="mt-3 inline-block text-[1.05rem] text-[#6b3a45] underline-offset-4 hover:underline"
         >
-          hello@juanitaandjohannes.com
+          {couple.email}
         </a>
         <p className="font-serif mt-6 text-[1.05rem] text-[#6b6560]">
           {couple.names}

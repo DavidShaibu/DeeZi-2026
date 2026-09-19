@@ -14,6 +14,14 @@ async function assert(condition, message) {
 
 try {
   await page.goto(base, { waitUntil: "networkidle" });
+  await assert(
+    (await page.getByText("We first met at Toastmasters").count()) >= 1,
+    "our story includes the Toastmasters meeting",
+  );
+  await assert(
+    (await page.locator('img[alt="Zikora & David"]').count()) === 1,
+    "our story shows the couple portrait",
+  );
   await page.getByTestId("open-menu").click();
   await page.getByTestId("site-menu").waitFor({ state: "visible" });
   const links = await page.locator('[data-testid="site-menu"] a').allTextContents();

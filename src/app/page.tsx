@@ -1,9 +1,9 @@
 import Image from "next/image";
 import type { Metadata } from "next";
 
-import { PageShell, StoryText } from "@/components/page-shell";
+import { PageShell } from "@/components/page-shell";
 import { PageTitle } from "@/components/page-title";
-import { couple, wedding } from "@/lib/site";
+import { couple, ourStory } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Our Story",
@@ -14,54 +14,34 @@ export default function OurStoryPage() {
     <PageShell>
       <PageTitle>Our Story</PageTitle>
 
-      <StoryText>
-        Juanita and Johannes found each other in Lagos — between busy weeks,
-        shared playlists, and the kind of conversations that make you miss your
-        stop. What started as one coffee became a life they were already
-        building, long before they had a name for it.
-      </StoryText>
-
-      <figure className="mt-10 overflow-hidden rounded-2xl">
+      <figure className="overflow-hidden rounded-2xl">
         <Image
-          src="/images/story-couple.jpg"
-          alt={`${couple.names} walking together at golden hour`}
-          width={1200}
-          height={900}
-          className="h-auto w-full object-cover"
+          src="/images/our-story.png"
+          alt={`${couple.names}`}
+          width={1086}
+          height={1448}
+          className="h-auto w-full object-cover object-top"
           priority
         />
       </figure>
 
-      <h2 className="font-script mt-12 mb-5 text-center text-4xl text-[#2a2a2a]">
-        How we met
-      </h2>
-      <StoryText>
-        A mutual friend insisted they would get along. Juanita almost cancelled.
-        Johannes arrived early and kept the better seat. They talked until the
-        café closed, then kept talking on the walk to the car. By the following
-        Sunday they had plans, a running joke, and no interest in being casual.
-      </StoryText>
-
-      <figure className="mt-10 overflow-hidden rounded-2xl">
-        <Image
-          src="/images/story-cafe.jpg"
-          alt="Juanita and Johannes laughing over coffee"
-          width={1200}
-          height={900}
-          className="h-auto w-full object-cover"
-        />
-      </figure>
-
-      <h2 className="font-script mt-12 mb-5 text-center text-4xl text-[#2a2a2a]">
-        The proposal
-      </h2>
-      <StoryText>
-        Johannes asked on a quiet stretch of beach at dusk, under a simple arch
-        of white flowers and a handwritten sign. Juanita said yes before he
-        finished the question. They are getting married on {wedding.dateLabel}{" "}
-        in {wedding.city}, surrounded by the people who watched this story
-        grow.
-      </StoryText>
+      <div className="mt-12 flex flex-col gap-10">
+        {ourStory.map((beat, index) => (
+          <blockquote key={`${beat.speaker}-${index}`} className="text-center">
+            <p className="text-[11px] font-medium tracking-[0.22em] text-[#6b3a45] uppercase">
+              {beat.speaker}
+            </p>
+            {beat.text.split("\n\n").map((paragraph) => (
+              <p
+                key={paragraph}
+                className="font-serif mt-3 text-[1.2rem] leading-8 text-[#2f2f2f] sm:text-[1.28rem] sm:leading-9"
+              >
+                {paragraph}
+              </p>
+            ))}
+          </blockquote>
+        ))}
+      </div>
     </PageShell>
   );
 }
