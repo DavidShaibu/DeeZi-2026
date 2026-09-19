@@ -3,37 +3,34 @@
 import { useState, type FormEvent } from "react";
 
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
 
 export function ContactForm() {
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">(
     "idle",
   );
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
 
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    const form = event.currentTarget;
-    const data = new FormData(form);
     setStatus("sending");
 
     try {
       const response = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name: data.get("name"),
-          email: data.get("email"),
-          message: data.get("message"),
-        }),
+        body: JSON.stringify({ name, email, message }),
       });
 
       if (!response.ok) {
         throw new Error("Request failed");
       }
 
-      form.reset();
+      setName("");
+      setEmail("");
+      setMessage("");
       setStatus("sent");
     } catch {
       setStatus("error");
@@ -60,18 +57,23 @@ export function ContactForm() {
     );
   }
 
+  const fieldClass =
+    "h-12 w-full rounded-xl border border-[#d9cfc6] bg-white px-3.5 text-base text-[#2b2b2b] outline-none transition focus:border-[#c4a090] focus:ring-2 focus:ring-[#c4a090]/40";
+
   return (
     <form onSubmit={onSubmit} className="space-y-5">
       <div className="space-y-2">
         <Label htmlFor="name" className="text-[13px] tracking-[0.08em] uppercase">
           Name
         </Label>
-        <Input
+        <input
           id="name"
           name="name"
+          value={name}
+          onChange={(event) => setName(event.target.value)}
           required
           autoComplete="name"
-          className="h-12 rounded-xl border-[#d9cfc6] bg-white px-3.5 text-base"
+          className={fieldClass}
         />
       </div>
       <div className="space-y-2">
@@ -81,13 +83,15 @@ export function ContactForm() {
         >
           Email
         </Label>
-        <Input
+        <input
           id="email"
           name="email"
           type="email"
+          value={email}
+          onChange={(event) => setEmail(event.target.value)}
           required
           autoComplete="email"
-          className="h-12 rounded-xl border-[#d9cfc6] bg-white px-3.5 text-base"
+          className={fieldClass}
         />
       </div>
       <div className="space-y-2">
@@ -97,12 +101,14 @@ export function ContactForm() {
         >
           Message
         </Label>
-        <Textarea
+        <textarea
           id="message"
           name="message"
+          value={message}
+          onChange={(event) => setMessage(event.target.value)}
           required
           rows={5}
-          className="min-h-32 rounded-xl border-[#d9cfc6] bg-white px-3.5 py-3 text-base"
+          className={`${fieldClass} min-h-32 py-3`}
         />
       </div>
       {status === "error" ? (

@@ -5,7 +5,6 @@ import { useState } from "react";
 
 import { PageShell, StoryText } from "@/components/page-shell";
 import { PageTitle } from "@/components/page-title";
-import { Button } from "@/components/ui/button";
 import { couple, registryItems } from "@/lib/site";
 
 export default function RegistryPage() {
@@ -54,14 +53,17 @@ export default function RegistryPage() {
                 </div>
                 <p className="shrink-0 text-sm text-[#6b6560]">{item.amount}</p>
               </div>
-              <Button
+              <button
                 type="button"
-                variant={isPledged ? "secondary" : "outline"}
-                className="mt-4 h-10 rounded-full border-[#2a2a2a] px-5"
+                className={
+                  isPledged
+                    ? "mt-4 inline-flex h-10 items-center rounded-full bg-[#f4efe9] px-5 text-sm font-medium text-[#2a2a2a]"
+                    : "mt-4 inline-flex h-10 items-center rounded-full border border-[#2a2a2a] bg-white px-5 text-sm font-medium text-[#2a2a2a] transition hover:bg-[#f4efe9]"
+                }
                 onClick={() => setPledged(item.title)}
               >
                 {isPledged ? "We’ll take it from here" : "Contribute"}
-              </Button>
+              </button>
             </li>
           );
         })}
