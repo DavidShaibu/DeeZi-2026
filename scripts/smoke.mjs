@@ -22,6 +22,15 @@ try {
     (await page.locator('img[alt="Zikora & David"]').count()) === 1,
     "our story shows the couple portrait",
   );
+  await assert(
+    (await page.getByTestId("story-chapter-photos").locator("img").count()) ===
+      2,
+    "our story breaks with two chapter photos",
+  );
+  await assert(
+    (await page.getByText("Eventually.").count()) >= 1,
+    "photos sit after she said yes",
+  );
   await page.getByTestId("open-menu").click();
   await page.getByTestId("site-menu").waitFor({ state: "visible" });
   const links = await page.locator('[data-testid="site-menu"] a').allTextContents();

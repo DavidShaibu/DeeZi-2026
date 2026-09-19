@@ -4,7 +4,7 @@ A wedding website for Zikora and David, designed in the style of a floral WithJo
 
 There are four pages:
 
-- **Our Story** — how they met, in their own words
+- **Our Story** — how they met, in their own words, with photos from the day she said yes
 - **Where to Stay** — two hotels in Huntsville, Texas, a countdown, and a map
 - **Registry** — cash donations via Navy Federal and Zelle
 - **Contact Us** — wedding coordinator and family representative numbers

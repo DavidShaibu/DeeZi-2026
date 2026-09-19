@@ -128,7 +128,27 @@ export const ourStory = [
   },
   {
     speaker: "Zikora",
-    text: "Eventually. 😂\n\nSince then, we’ve just been figuring things out together. We’ve learned a lot about each other, grown together, had plenty of laughs, and learned that being together is as much about friendship as it is about love.",
+    text: "Eventually. 😂",
+  },
+  {
+    photos: [
+      {
+        src: "/images/story-friends.jpg",
+        alt: "Zikora and David with friends",
+        width: 1170,
+        height: 1755,
+      },
+      {
+        src: "/images/story-together.jpg",
+        alt: "Zikora and David on the deck",
+        width: 1170,
+        height: 1560,
+      },
+    ],
+  },
+  {
+    speaker: "Zikora",
+    text: "Since then, we’ve just been figuring things out together. We’ve learned a lot about each other, grown together, had plenty of laughs, and learned that being together is as much about friendship as it is about love.",
   },
   {
     speaker: "David",
