@@ -75,8 +75,8 @@ try {
     "contact lists the wedding coordinator",
   );
   await assert(
-    (await page.getByText("Chidalu (Chief Bridesmaid)").count()) >= 1,
-    "contact lists Chidalu as chief bridesmaid",
+    (await page.getByText("Chidalu Mozie (Chief Bridesmaid)").count()) >= 1,
+    "contact lists Chidalu Mozie as chief bridesmaid",
   );
   await assert(
     (await page.getByRole("link", { name: "+1 832 941-8841" }).count()) === 1,

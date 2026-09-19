@@ -59,7 +59,7 @@ export const registry = {
 export const contacts = [
   {
     role: "Wedding Coordinator",
-    name: "Chidalu",
+    name: "Chidalu Mozie",
     detail: "Chief Bridesmaid",
     phone: "+1 832 941-8841",
     tel: "+18329418841",
