@@ -56,6 +56,23 @@ export const registry = {
   zelle: "8172333219",
 } as const;
 
+export const contacts = [
+  {
+    role: "Wedding Coordinator",
+    name: "Chidalu",
+    detail: "Chief Bridesmaid",
+    phone: "+1 832 941-8841",
+    tel: "+18329418841",
+  },
+  {
+    role: "Family Representative",
+    name: "Mrs. Shaibu",
+    detail: "Groom's Family",
+    phone: "+234 802 321 6384",
+    tel: "+2348023216384",
+  },
+] as const;
+
 export const ourStory = [
   {
     speaker: "David",

@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
 
-import { ContactForm } from "@/components/contact-form";
-import { PageShell, StoryText } from "@/components/page-shell";
+import { PageShell } from "@/components/page-shell";
 import { PageTitle } from "@/components/page-title";
-import { couple } from "@/lib/site";
+import { contacts } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Contact Us",
@@ -14,28 +13,23 @@ export default function ContactPage() {
     <PageShell>
       <PageTitle>Contact Us</PageTitle>
 
-      <StoryText>
-        Questions about travel, attire, plus-ones, or anything we forgot to
-        mention? Write to us. We read every note.
-      </StoryText>
-
-      <div className="mx-auto mt-10 max-w-md">
-        <ContactForm />
-      </div>
-
-      <div className="mt-12 text-center">
-        <p className="text-[11px] font-medium tracking-[0.22em] text-[#3a3a3a] uppercase">
-          Or email us directly
-        </p>
-        <a
-          href={`mailto:${couple.email}`}
-          className="mt-3 inline-block text-[1.05rem] text-[#6b3a45] underline-offset-4 hover:underline"
-        >
-          {couple.email}
-        </a>
-        <p className="font-serif mt-6 text-[1.05rem] text-[#6b6560]">
-          {couple.names}
-        </p>
+      <div className="flex flex-col gap-16 sm:gap-20" data-testid="contact-list">
+        {contacts.map((person) => (
+          <section key={person.role}>
+            <h2 className="font-serif text-[1.85rem] leading-tight text-[#1f1f1f] sm:text-[2.05rem]">
+              {person.role}
+            </h2>
+            <p className="font-serif mt-8 text-[1.15rem] leading-8 text-[#2f2f2f] sm:text-[1.25rem]">
+              {person.name} ({person.detail})
+            </p>
+            <a
+              href={`tel:${person.tel}`}
+              className="font-serif mt-8 inline-block text-[1.15rem] leading-8 text-[#2f2f2f] sm:text-[1.25rem]"
+            >
+              {person.phone}
+            </a>
+          </section>
+        ))}
       </div>
     </PageShell>
   );

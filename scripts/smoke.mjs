@@ -69,12 +69,32 @@ try {
   await page.getByTestId("open-menu").click();
   await page.getByRole("link", { name: "Contact Us" }).click();
   await page.waitForURL("**/contact");
-  await page.getByLabel("Name").fill("Adaeze Okonkwo");
-  await page.getByLabel("Email").fill("adaeze@example.com");
-  await page.getByLabel("Message").fill("Cannot wait to celebrate in Lagos.");
-  await page.getByTestId("contact-submit").click();
-  await page.getByTestId("contact-thanks").waitFor({ state: "visible" });
-  await assert(true, "contact form shows thank-you");
+  await assert(
+    (await page.getByRole("heading", { name: "Wedding Coordinator" }).count()) ===
+      1,
+    "contact lists the wedding coordinator",
+  );
+  await assert(
+    (await page.getByText("Chidalu (Chief Bridesmaid)").count()) >= 1,
+    "contact lists Chidalu as chief bridesmaid",
+  );
+  await assert(
+    (await page.getByRole("link", { name: "+1 832 941-8841" }).count()) === 1,
+    "contact lists Chidalu’s number",
+  );
+  await assert(
+    (await page.getByRole("heading", { name: "Family Representative" }).count()) ===
+      1,
+    "contact lists the family representative",
+  );
+  await assert(
+    (await page.getByText("Mrs. Shaibu (Groom's Family)").count()) >= 1,
+    "contact lists Mrs. Shaibu for the groom’s family",
+  );
+  await assert(
+    (await page.getByRole("link", { name: "+234 802 321 6384" }).count()) === 1,
+    "contact lists Mrs. Shaibu’s number",
+  );
 
   await page.getByTestId("open-menu").click();
   await page.getByRole("link", { name: "Where to Stay" }).click();
