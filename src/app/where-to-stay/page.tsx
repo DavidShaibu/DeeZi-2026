@@ -26,9 +26,9 @@ export default function WhereToStayPage() {
       <PageTitle>Where to Stay</PageTitle>
 
       <StoryText>
-        We&apos;ve picked two hotels in Huntsville, Texas, a short drive from
-        the wedding. They sit next to each other on Ravenwood Village Drive.
-        Let us know if you have any questions!
+        We&apos;ve picked a handful of hotels in Huntsville, Texas, a short
+        drive from the wedding. Several sit near I-45 and Ravenwood Village
+        Drive. Let us know if you have any questions!
       </StoryText>
 
       <Countdown />
@@ -36,7 +36,7 @@ export default function WhereToStayPage() {
       <div className="relative overflow-hidden rounded-[1.6rem] bg-[#efe6d6]">
         <Image
           src="/images/stay-map-huntsville.jpg"
-          alt={`Map of ${wedding.venueArea} with both hotels`}
+          alt={`Map of ${wedding.venueArea} with nearby hotels`}
           width={1600}
           height={900}
           className="h-auto w-full object-cover"

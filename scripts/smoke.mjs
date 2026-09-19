@@ -129,6 +129,18 @@ try {
     (await page.getByText("Hampton Inn & Suites").count()) >= 1,
     "hampton hotel is listed",
   );
+  await assert(
+    (await page.getByText("Comfort Inn").count()) >= 1,
+    "comfort inn is listed",
+  );
+  await assert(
+    (await page.getByText("Huntsville Inn & Suites").count()) >= 1,
+    "huntsville inn and suites is listed",
+  );
+  await assert(
+    (await page.getByText("Home2 Suites by Hilton").count()) >= 1,
+    "home2 suites is listed",
+  );
   const mapHref = await page.getByRole("link", { name: "View on Map" }).first().getAttribute("href");
   await assert(
     Boolean(mapHref?.includes("Huntsville") && mapHref?.includes("Ravenwood")),

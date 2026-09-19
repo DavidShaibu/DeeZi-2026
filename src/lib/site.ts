@@ -54,6 +54,27 @@ export const hotels = [
     image: "/images/hotel-hampton.jpg",
     mapsAddress: "120 Ravenwood Village Drive, Huntsville, TX 77340",
   },
+  {
+    name: "Comfort Inn",
+    area: "3105 Montgomery Road",
+    note: "Free breakfast, an outdoor pool, and a short drive from downtown Huntsville.",
+    image: "/images/hotel-comfort.jpg",
+    mapsAddress: "3105 Montgomery Road, Huntsville, TX 77340",
+  },
+  {
+    name: "Huntsville Inn & Suites",
+    area: "201 West Hill Park Circle",
+    note: "Just off I-45, with free breakfast and an outdoor pool.",
+    image: "/images/hotel-huntsville-inn.jpg",
+    mapsAddress: "201 West Hill Park Circle, Huntsville, TX 77320",
+  },
+  {
+    name: "Home2 Suites by Hilton",
+    area: "199 Interstate 45 South",
+    note: "All-suite rooms with kitchenettes, free breakfast, and a pool.",
+    image: "/images/hotel-home2.jpg",
+    mapsAddress: "199 Interstate 45 South, Huntsville, TX 77340",
+  },
 ] as const;
 
 export const registry = {
