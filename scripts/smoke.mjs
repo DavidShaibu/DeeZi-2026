@@ -92,6 +92,18 @@ try {
     (await page.getByText("8172333219").count()) >= 1,
     "registry shows the Zelle number",
   );
+  await assert(
+    (await page.getByText("GTBank").count()) >= 1,
+    "registry lists GTBank for naira",
+  );
+  await assert(
+    (await page.getByText("Zikora Benedicta Mozie").count()) >= 1,
+    "registry shows the naira account name",
+  );
+  await assert(
+    (await page.getByText("0478810470").count()) >= 1,
+    "registry shows the naira account number",
+  );
 
   await page.getByTestId("open-menu").click();
   await page.getByRole("link", { name: "RSVP", exact: true }).first().click();

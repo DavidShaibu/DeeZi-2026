@@ -5,7 +5,7 @@ import { PageTitle } from "@/components/page-title";
 import { couple, registry, wedding } from "@/lib/site";
 
 export default function RegistryPage() {
-  const { bank } = registry;
+  const { usd, naira } = registry;
 
   return (
     <PageShell>
@@ -39,18 +39,25 @@ export default function RegistryPage() {
         className="mt-10 space-y-1 text-[1.08rem] font-semibold leading-8 text-[#1a1a1a]"
         data-testid="registry-bank"
       >
-        <p>{bank.name}</p>
-        <p>Account Name: {bank.accountName}</p>
-        <p>Account Number: {bank.accountNumber}</p>
-        <p>Routing Number: {bank.routingNumber}</p>
+        <p className="font-serif text-[1.35rem] font-semibold">USD</p>
+        <p>{usd.bank.name}</p>
+        <p>Account Name: {usd.bank.accountName}</p>
+        <p>Account Number: {usd.bank.accountNumber}</p>
+        <p>Routing Number: {usd.bank.routingNumber}</p>
+        <p className="pt-3" data-testid="registry-zelle">
+          Zelle: {usd.zelle}
+        </p>
       </div>
 
-      <p
-        className="mt-8 text-[1.08rem] font-semibold leading-8 text-[#1a1a1a]"
-        data-testid="registry-zelle"
+      <div
+        className="mt-10 space-y-1 text-[1.08rem] font-semibold leading-8 text-[#1a1a1a]"
+        data-testid="registry-naira"
       >
-        Zelle: {registry.zelle}
-      </p>
+        <p className="font-serif text-[1.35rem] font-semibold">Naira</p>
+        <p>{naira.bank}</p>
+        <p>Account Name: {naira.accountName}</p>
+        <p>Account Number: {naira.accountNumber}</p>
+      </div>
     </PageShell>
   );
 }
