@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 
+import { Countdown } from "@/components/countdown";
 import { PageShell, StoryText } from "@/components/page-shell";
 import { PageTitle } from "@/components/page-title";
 import { rsvpFormUrl, socialPreview } from "@/lib/site";
@@ -21,10 +22,12 @@ export default function RsvpPage() {
     <PageShell>
       <PageTitle>RSVP</PageTitle>
 
+      <Countdown />
+
       <StoryText>
-        We would love to know if you can celebrate with us in Huntsville on
-        Friday, October 9, 2026. Please fill out the short form so we can plan
-        for you.
+        We would love to know if you can celebrate with us at our wedding.
+        Kindly fill out the short form by 25 September 2026 so we can plan for
+        you.
       </StoryText>
 
       <p className="mt-10 text-center">

@@ -195,6 +195,15 @@ try {
   await page.getByTestId("open-menu").click();
   await page.getByTestId("site-menu").getByRole("link", { name: "RSVP", exact: true }).click();
   await page.waitForURL("**/rsvp");
+  await assert(
+    (await page.getByText("Event takes place in:").count()) >= 1,
+    "rsvp shows the countdown",
+  );
+  await assert(
+    (await page.getByText("Kindly fill out the short form by 25 September 2026").count()) >=
+      1,
+    "rsvp asks guests to reply by 25 September 2026",
+  );
   const rsvpHref = await page.getByTestId("rsvp-form-link").getAttribute("href");
   await assert(
     Boolean(rsvpHref?.includes("docs.google.com/forms")),
