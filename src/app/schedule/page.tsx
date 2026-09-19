@@ -3,6 +3,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { MapPin } from "lucide-react";
 
+import { Countdown } from "@/components/countdown";
 import { MapLink } from "@/components/map-link";
 import { PageShell } from "@/components/page-shell";
 import { PageTitle } from "@/components/page-title";
@@ -51,6 +52,8 @@ export default function SchedulePage() {
       </figure>
 
       <PageTitle>Schedule</PageTitle>
+
+      <Countdown />
 
       <div className="flex flex-col gap-16 sm:gap-20" data-testid="schedule-list">
         {schedule.map((event) => (

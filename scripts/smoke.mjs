@@ -72,6 +72,10 @@ try {
     "schedule heading visible",
   );
   await assert(
+    (await page.getByText("Event takes place in:").count()) >= 1,
+    "schedule shows the countdown",
+  );
+  await assert(
     (await page.locator('img[alt="St. Thomas Catholic Church"]').count()) === 1,
     "schedule shows the church photo",
   );
