@@ -30,10 +30,10 @@ export default function OurStoryPage() {
 
       <figure className="overflow-hidden rounded-2xl">
         <Image
-          src="/images/our-story.png"
+          src="/images/our-story.jpg"
           alt={`${couple.names}`}
-          width={1086}
-          height={1448}
+          width={1600}
+          height={1794}
           className="h-auto w-full object-cover object-top"
           priority
         />
