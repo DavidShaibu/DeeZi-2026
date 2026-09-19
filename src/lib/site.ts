@@ -36,8 +36,12 @@ export const navItems = [
   { href: "/", label: "Our Story" },
   { href: "/where-to-stay", label: "Where to Stay" },
   { href: "/registry", label: "Registry" },
+  { href: "/rsvp", label: "RSVP" },
   { href: "/contact", label: "Contact Us" },
 ] as const;
+
+export const rsvpFormUrl =
+  "https://docs.google.com/forms/d/e/1FAIpQLSdAFelBmuq0qIyOvgol8j7GdPoqfMgxALjJuv9-IJenMgTjOg/viewform?usp=sharing&ouid=105978498231273877918";
 
 export const hotels = [
   {

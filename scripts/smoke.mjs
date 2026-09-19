@@ -36,17 +36,26 @@ try {
   const links = await page.locator('[data-testid="site-menu"] a').allTextContents();
   await assert(
     JSON.stringify(links) ===
-      JSON.stringify(["Our Story", "Where to Stay", "Registry", "Contact Us"]),
-  await assert(
-    JSON.stringify(links) ===
-      JSON.stringify(["Our Story", "Where to Stay", "Registry", "Contact Us"]),
-    `menu has four tabs: ${links.join(", ")}`,
+      JSON.stringify([
+        "Our Story",
+        "Where to Stay",
+        "Registry",
+        "RSVP",
+        "Contact Us",
+      ]),
+    `menu has five tabs: ${links.join(", ")}`,
   );
   const tabLinks = await page.locator('[data-testid="tab-bar"] a').allTextContents();
   await assert(
     JSON.stringify(tabLinks) ===
-      JSON.stringify(["Our Story", "Where to Stay", "Registry", "Contact Us"]),
-    `horizontal tab bar has four tabs: ${tabLinks.join(", ")}`,
+      JSON.stringify([
+        "Our Story",
+        "Where to Stay",
+        "Registry",
+        "RSVP",
+        "Contact Us",
+      ]),
+    `horizontal tab bar has five tabs: ${tabLinks.join(", ")}`,
   );
 
   await page.getByRole("link", { name: "Registry" }).click();
@@ -82,6 +91,15 @@ try {
   await assert(
     (await page.getByText("8172333219").count()) >= 1,
     "registry shows the Zelle number",
+  );
+
+  await page.getByTestId("open-menu").click();
+  await page.getByRole("link", { name: "RSVP", exact: true }).first().click();
+  await page.waitForURL("**/rsvp");
+  const rsvpHref = await page.getByTestId("rsvp-form-link").getAttribute("href");
+  await assert(
+    Boolean(rsvpHref?.includes("docs.google.com/forms")),
+    "rsvp page links to the Google Form",
   );
 
   await page.getByTestId("open-menu").click();

@@ -2,11 +2,12 @@
 
 Wedding website for Zikora and David (`#DeeZi'26`), designed in the style of a floral WithJoy page: cream header, watercolor blooms, script names, and a slide-out menu.
 
-There are four pages:
+There are five pages:
 
 - **Our Story** — how they met, in their own words, with photos from the day she said yes
-- **Where to Stay** — two hotels in Huntsville, Texas, a countdown, and a map
+- **Where to Stay** — hotels in Huntsville, Texas, a countdown, and a map
 - **Registry** — cash donations via Navy Federal and Zelle
+- **RSVP** — a short note and a link to the Google Form
 - **Contact Us** — wedding coordinator and family representative numbers
 
 Wedding date used in the countdown: **Friday, 9 October 2026**, in Huntsville, Texas.
