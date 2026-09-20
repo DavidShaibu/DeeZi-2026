@@ -2,6 +2,28 @@ import { chromium } from "playwright";
 
 const base = process.env.BASE_URL ?? "http://127.0.0.1:43180";
 
+function expectedCountdownLabel() {
+  const now = new Date();
+  const wedding = new Date("2026-10-09T16:00:00+01:00");
+  const today = Date.UTC(now.getFullYear(), now.getMonth(), now.getDate());
+  const weddingDay = Date.UTC(
+    wedding.getFullYear(),
+    wedding.getMonth(),
+    wedding.getDate(),
+  );
+  const days = Math.round((weddingDay - today) / 86_400_000);
+  if (days > 1) {
+    return `${days} DAYS`;
+  }
+  if (days === 1) {
+    return "1 DAY";
+  }
+  if (days === 0) {
+    return "TODAY";
+  }
+  return "CELEBRATED";
+}
+
 const browser = await chromium.launch({ headless: true });
 const page = await browser.newPage({ viewport: { width: 390, height: 844 } });
 
@@ -74,6 +96,12 @@ try {
   await assert(
     (await page.getByText("Event takes place in:").count()) >= 1,
     "schedule shows the countdown",
+  );
+  await page.getByTestId("countdown-value").waitFor();
+  await assert(
+    (await page.getByTestId("countdown-value").textContent())?.trim() ===
+      expectedCountdownLabel(),
+    `schedule countdown matches today (${expectedCountdownLabel()})`,
   );
   await assert(
     (await page.locator('img[alt="St. Thomas Catholic Church"]').count()) === 1,
