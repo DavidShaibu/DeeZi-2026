@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Cormorant_Garamond, DM_Sans, Great_Vibes } from "next/font/google";
 
 import { SiteHeader } from "@/components/site-header";
-import { couple, socialPreview } from "@/lib/site";
+import { couple, siteUrl, socialPreview } from "@/lib/site";
 
 import "./globals.css";
 
@@ -24,7 +24,7 @@ const sans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://dee-zi-2026.vercel.app"),
+  metadataBase: new URL(siteUrl),
   title: {
     default: `${couple.names} — Wedding`,
     template: `%s · ${couple.names}`,

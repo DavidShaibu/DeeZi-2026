@@ -36,6 +36,11 @@ async function assert(condition, message) {
 
 try {
   await page.goto(base, { waitUntil: "networkidle" });
+  const ogImage = await page.locator('meta[property="og:image"]').getAttribute("content");
+  await assert(
+    ogImage === "https://zikora-david-2026.vercel.app/images/og-preview-v2.jpg",
+    "social preview uses the zikora-david-2026 site URL",
+  );
   await assert(
     (await page.getByText("We first met at Toastmasters").count()) >= 1,
     "our story includes the Toastmasters meeting",

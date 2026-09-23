@@ -37,6 +37,8 @@ npm run build
 npm start
 ```
 
+The public site is [https://zikora-david-2026.vercel.app](https://zikora-david-2026.vercel.app).
+
 ## Deploy on Vercel
 
 This is a standard Next.js app. In Vercel:
@@ -46,7 +48,7 @@ This is a standard Next.js app. In Vercel:
 3. Do not add environment variables — none are required
 4. Deploy
 
-Vercel will run `next build`. The local `npm start` port in `package.json` is only for development here and is ignored on Vercel.
+The production URL is **zikora-david-2026**. Vercel will run `next build`. The local `npm start` port in `package.json` is only for development here and is ignored on Vercel.
 
 ## Notes
 
