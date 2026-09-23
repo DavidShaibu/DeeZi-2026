@@ -40,11 +40,7 @@ export default function RegistryPage() {
         data-testid="registry-bank"
       >
         <p className="font-serif text-[1.35rem] font-semibold">USD</p>
-        <p>Account Name: {usd.bank.accountName}</p>
-        <p>Account Number: {usd.bank.accountNumber}</p>
-        <p>Routing Number: {usd.bank.routingNumber}</p>
-        <p>Bank: {usd.bank.name}</p>
-        <p aria-hidden="true">&nbsp;</p>
+        <p>Account Name: {usd.accountName}</p>
         <p data-testid="registry-zelle">Zelle: {usd.zelle}</p>
       </div>
 

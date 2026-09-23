@@ -7,7 +7,7 @@ There are six pages:
 - **Our Story** — how they met, in their own words, with photos
 - **Schedule** — ceremony at St. Thomas Catholic Church and reception at Sky Blue Event Hall
 - **Where to Stay** — hotels in Huntsville, Texas, a countdown, and a map
-- **Registry** — cash donations via Navy Federal and Zelle
+- **Registry** — cash gifts via Zelle (USD) and GTBank (naira)
 - **RSVP** — a short note and a link to the Google Form
 - **Contact Us** — chief bridesmaid and family representative numbers
 

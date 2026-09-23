@@ -129,12 +129,7 @@ export const hotels = [
 export const registry = {
   hashtag: "#DeeZi26",
   usd: {
-    bank: {
-      name: "Navy Federal",
-      accountName: "Chidalu Mozie",
-      accountNumber: "7226546765",
-      routingNumber: "256074974",
-    },
+    accountName: "Chidalu Mozie",
     zelle: "8172333219",
   },
   naira: {

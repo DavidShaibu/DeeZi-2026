@@ -187,24 +187,14 @@ try {
     "registry shows the USD account name",
   );
   await assert(
-    usdText.includes("Account Number: 7226546765"),
-    "registry shows the USD account number",
-  );
-  await assert(
-    usdText.includes("Routing Number: 256074974"),
-    "registry shows the routing number",
-  );
-  await assert(
-    usdText.includes("Bank: Navy Federal"),
-    "registry lists Navy Federal as the USD bank",
-  );
-  await assert(
     usdText.includes("Zelle: 8172333219"),
     "registry shows the Zelle number",
   );
   await assert(
-    /Bank: Navy Federal\n\s*\nZelle:/.test(usdText),
-    "registry leaves one empty line before Zelle",
+    !usdText.includes("Account Number") &&
+      !usdText.includes("Routing Number") &&
+      !usdText.includes("Navy Federal"),
+    "registry USD block no longer lists bank account details",
   );
   const nairaText = await page.getByTestId("registry-naira").innerText();
   await assert(
