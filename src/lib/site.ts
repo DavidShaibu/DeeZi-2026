@@ -131,6 +131,7 @@ export const hotels = [
 export const registry = {
   hashtag: "#DeeZi26",
   usd: {
+    accountName: "Chidalu Mozie",
     zelle: "8172333219",
   },
   naira: {
