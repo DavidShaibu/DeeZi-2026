@@ -183,18 +183,16 @@ try {
   );
   const usdText = await page.getByTestId("registry-bank").innerText();
   await assert(
-    usdText.includes("Account Name: Chidalu Mozie"),
-    "registry shows the USD account name",
-  );
-  await assert(
     usdText.includes("Zelle: 8172333219"),
     "registry shows the Zelle number",
   );
   await assert(
-    !usdText.includes("Account Number") &&
+    !usdText.includes("Account Name") &&
+      !usdText.includes("Account Number") &&
       !usdText.includes("Routing Number") &&
-      !usdText.includes("Navy Federal"),
-    "registry USD block no longer lists bank account details",
+      !usdText.includes("Navy Federal") &&
+      !usdText.includes("Chidalu Mozie"),
+    "registry USD block lists only Zelle",
   );
   const nairaText = await page.getByTestId("registry-naira").innerText();
   await assert(
