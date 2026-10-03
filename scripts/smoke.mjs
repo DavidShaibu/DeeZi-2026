@@ -198,8 +198,8 @@ try {
   );
   const zoomSrc = await page.getByTestId("zoom-frame").getAttribute("src");
   await assert(
-    zoomSrc === "https://yale.zoom.us/j/91664467876",
-    `browser join loads the Yale meeting link: ${zoomSrc}`,
+    zoomSrc === "https://yale.zoom.us/wc/join/91664467876",
+    `browser join loads the Zoom web client for this meeting: ${zoomSrc}`,
   );
 
   await page.getByTestId("tab-bar").getByRole("link", { name: "Registry" }).click();

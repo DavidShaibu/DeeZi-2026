@@ -47,6 +47,7 @@ export const navItems = [
 export const zoom = {
   meetingNumber: "91664467876",
   joinUrl: "https://yale.zoom.us/j/91664467876",
+  browserUrl: "https://yale.zoom.us/wc/join/91664467876",
   downloadUrl: "https://yale.zoom.us/download",
 } as const;
 
