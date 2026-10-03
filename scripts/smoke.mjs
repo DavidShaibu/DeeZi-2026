@@ -70,12 +70,13 @@ try {
       JSON.stringify([
         "Our Story",
         "Schedule",
+        "Zoom",
         "Where to Stay",
         "Registry",
         "RSVP",
         "Contact Us",
       ]),
-    `menu has six tabs: ${links.join(", ")}`,
+    `menu has seven tabs: ${links.join(", ")}`,
   );
   const tabLinks = await page.locator('[data-testid="tab-bar"] a').allTextContents();
   await assert(
@@ -83,12 +84,13 @@ try {
       JSON.stringify([
         "Our Story",
         "Schedule",
+        "Zoom",
         "Where to Stay",
         "Registry",
         "RSVP",
         "Contact Us",
       ]),
-    `horizontal tab bar has six tabs: ${tabLinks.join(", ")}`,
+    `horizontal tab bar has seven tabs: ${tabLinks.join(", ")}`,
   );
   await page.getByTestId("close-menu").click();
 
@@ -166,6 +168,32 @@ try {
       directionsHref?.includes("16th") && directionsHref?.includes("Huntsville"),
     ),
     `ceremony directions point at the church: ${directionsHref}`,
+  );
+
+  await page.getByTestId("tab-bar").getByRole("link", { name: "Zoom" }).click();
+  await page.waitForURL("**/zoom");
+  await assert(
+    (await page.getByRole("heading", { name: "Zoom" }).count()) === 1,
+    "zoom heading visible",
+  );
+  await assert(
+    (await page.getByTestId("zoom-message").textContent())?.includes(
+      "stay on this page",
+    ),
+    "zoom page keeps guests on the site",
+  );
+  const zoomSrc = await page.getByTestId("zoom-frame").getAttribute("src");
+  await assert(
+    Boolean(
+      zoomSrc?.includes("yale.zoom.us/wc/join/92127383568") &&
+        !zoomSrc?.includes("/j/"),
+    ),
+    `zoom embeds the in-browser room, not the app redirect: ${zoomSrc}`,
+  );
+  const allow = await page.getByTestId("zoom-frame").getAttribute("allow");
+  await assert(
+    Boolean(allow?.includes("camera") && allow?.includes("microphone")),
+    "zoom frame allows camera and microphone",
   );
 
   await page.getByTestId("tab-bar").getByRole("link", { name: "Registry" }).click();

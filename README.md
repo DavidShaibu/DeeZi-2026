@@ -2,10 +2,11 @@
 
 Wedding website for Zikora and David (`#DeeZi26`), designed in the style of a floral WithJoy page: cream header, watercolor blooms, script names, and a slide-out menu.
 
-There are six pages:
+There are seven pages:
 
 - **Our Story** — how they met, in their own words, with photos
 - **Schedule** — ceremony at St. Thomas Catholic Church and reception at Sky Blue Event Hall
+- **Zoom** — live stream of the wedding, in a screen-sized Zoom frame on the page
 - **Where to Stay** — hotels in Huntsville, Texas, a countdown, and a map
 - **Registry** — cash gifts via Zelle (USD, account name + Zelle) and GTBank (naira)
 - **RSVP** — a short note and a link to the Google Form

@@ -37,11 +37,19 @@ export const socialPreview = {
 export const navItems = [
   { href: "/", label: "Our Story" },
   { href: "/schedule", label: "Schedule" },
+  { href: "/zoom", label: "Zoom" },
   { href: "/where-to-stay", label: "Where to Stay" },
   { href: "/registry", label: "Registry" },
   { href: "/rsvp", label: "RSVP" },
   { href: "/contact", label: "Contact Us" },
 ] as const;
+
+export const zoom = {
+  meetingNumber: "92127383568",
+  joinUrl: "https://yale.zoom.us/j/92127383568",
+  /** In-browser Zoom UI. `/j/` tries to open the Zoom app; `/wc/join/` stays in the page. */
+  embedUrl: "https://yale.zoom.us/wc/join/92127383568",
+} as const;
 
 export const schedule = [
   {

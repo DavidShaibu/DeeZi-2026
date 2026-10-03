@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, DM_Sans, Great_Vibes } from "next/font/google";
 
+import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { couple, siteUrl, socialPreview } from "@/lib/site";
 
@@ -54,10 +55,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >
       <body className="flex min-h-full flex-col bg-white text-[#2b2b2b]">
         <SiteHeader />
-        <div className="flex flex-1 flex-col">{children}</div>
-        <footer className="bg-white px-6 pb-10 text-center text-[11px] font-medium tracking-[0.22em] text-[#8a8178] uppercase">
-          Huntsville, TX · 9 October 2026
-        </footer>
+        <div className="flex min-h-0 flex-1 flex-col">{children}</div>
+        <SiteFooter />
       </body>
     </html>
   );
