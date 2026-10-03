@@ -178,19 +178,28 @@ try {
   );
   await assert(
     (await page.getByTestId("zoom-message").textContent())?.includes(
-      "stay on this page",
+      "only opens after you tap a button",
     ),
-    "zoom page keeps guests on the site",
+    "zoom page does not auto-launch Zoom",
   );
-  const zoomSrc = await page.getByTestId("zoom-frame").getAttribute("src");
   await assert(
-    zoomSrc === "https://yale.zoom.us/j/92127383568",
-    `zoom embeds the wedding meeting link: ${zoomSrc}`,
+    (await page.getByTestId("zoom-frame").count()) === 0,
+    "zoom tab does not load a Zoom iframe until a join button is used",
   );
-  const allow = await page.getByTestId("zoom-frame").getAttribute("allow");
+  const appHref = await page.getByTestId("zoom-join-app").getAttribute("href");
   await assert(
-    Boolean(allow?.includes("camera") && allow?.includes("microphone")),
-    "zoom frame allows camera and microphone",
+    appHref === "https://yale.zoom.us/j/92127383568",
+    `app join goes to the Zoom Workplace launch link: ${appHref}`,
+  );
+  const browserHref = await page
+    .getByTestId("zoom-join-browser")
+    .getAttribute("href");
+  await assert(
+    Boolean(
+      browserHref?.includes("yale.zoom.us/wc/join/92127383568") &&
+        browserHref?.includes("fromPWA=1"),
+    ),
+    `browser join goes to the Zoom web client: ${browserHref}`,
   );
 
   await page.getByTestId("tab-bar").getByRole("link", { name: "Registry" }).click();

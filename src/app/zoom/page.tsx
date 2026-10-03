@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 import { ZoomStage } from "@/components/zoom-stage";
-import { socialPreview, wedding } from "@/lib/site";
+import { socialPreview } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Zoom",
@@ -26,9 +26,8 @@ export default function ZoomPage() {
         className="font-serif mx-auto mb-4 max-w-xl text-center text-[1.05rem] leading-7 text-[#2f2f2f] sm:text-[1.12rem] sm:leading-8"
         data-testid="zoom-message"
       >
-        Watch the wedding live from wherever you are. The Zoom room opens in the
-        frame below, fitted to your screen — you can stay on this page for{" "}
-        {wedding.dateLong}.
+        Watch the wedding live from wherever you are. Choose how to join — Zoom
+        only opens after you tap a button below.
       </p>
       <ZoomStage />
     </main>
