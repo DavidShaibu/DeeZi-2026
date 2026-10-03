@@ -59,7 +59,7 @@ export function ZoomStage() {
       <iframe
         title="Wedding Zoom room"
         data-testid="zoom-frame"
-        src={zoom.embedUrl}
+        src={zoom.joinUrl}
         allow="camera *; microphone *; autoplay *; clipboard-write *; display-capture *; fullscreen *; speaker-selection *"
         allowFullScreen
         className="relative z-20 h-full w-full border-0 bg-white"

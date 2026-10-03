@@ -184,11 +184,8 @@ try {
   );
   const zoomSrc = await page.getByTestId("zoom-frame").getAttribute("src");
   await assert(
-    Boolean(
-      zoomSrc?.includes("yale.zoom.us/wc/join/92127383568") &&
-        !zoomSrc?.includes("/j/"),
-    ),
-    `zoom embeds the in-browser room, not the app redirect: ${zoomSrc}`,
+    zoomSrc === "https://yale.zoom.us/j/92127383568",
+    `zoom embeds the wedding meeting link: ${zoomSrc}`,
   );
   const allow = await page.getByTestId("zoom-frame").getAttribute("allow");
   await assert(

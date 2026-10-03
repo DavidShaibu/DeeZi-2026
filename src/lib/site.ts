@@ -47,8 +47,6 @@ export const navItems = [
 export const zoom = {
   meetingNumber: "92127383568",
   joinUrl: "https://yale.zoom.us/j/92127383568",
-  /** In-browser Zoom UI. `/j/` tries to open the Zoom app; `/wc/join/` stays in the page. */
-  embedUrl: "https://yale.zoom.us/wc/join/92127383568",
 } as const;
 
 export const schedule = [
