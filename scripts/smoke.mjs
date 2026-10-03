@@ -191,15 +191,15 @@ try {
     appHref === "https://yale.zoom.us/j/92127383568",
     `app join goes to the Zoom Workplace launch link: ${appHref}`,
   );
-  const browserHref = await page
-    .getByTestId("zoom-join-browser")
-    .getAttribute("href");
+  await page.getByTestId("zoom-join-browser").click();
   await assert(
-    Boolean(
-      browserHref?.includes("yale.zoom.us/wc/join/92127383568") &&
-        browserHref?.includes("fromPWA=1"),
-    ),
-    `browser join goes to the Zoom web client: ${browserHref}`,
+    page.url().includes("/zoom"),
+    "browser join stays on the Zoom tab",
+  );
+  const zoomSrc = await page.getByTestId("zoom-frame").getAttribute("src");
+  await assert(
+    zoomSrc === "https://yale.zoom.us/j/92127383568",
+    `browser join loads the Yale meeting link: ${zoomSrc}`,
   );
 
   await page.getByTestId("tab-bar").getByRole("link", { name: "Registry" }).click();
