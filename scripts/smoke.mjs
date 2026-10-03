@@ -188,7 +188,7 @@ try {
   );
   const appHref = await page.getByTestId("zoom-join-app").getAttribute("href");
   await assert(
-    appHref === "https://yale.zoom.us/j/92127383568",
+    appHref === "https://yale.zoom.us/j/91664467876",
     `app join goes to the Zoom Workplace launch link: ${appHref}`,
   );
   await page.getByTestId("zoom-join-browser").click();
@@ -198,7 +198,7 @@ try {
   );
   const zoomSrc = await page.getByTestId("zoom-frame").getAttribute("src");
   await assert(
-    zoomSrc === "https://yale.zoom.us/j/92127383568",
+    zoomSrc === "https://yale.zoom.us/j/91664467876",
     `browser join loads the Yale meeting link: ${zoomSrc}`,
   );
 
