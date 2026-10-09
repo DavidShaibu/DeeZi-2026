@@ -178,28 +178,22 @@ try {
   );
   await assert(
     (await page.getByTestId("zoom-message").textContent())?.includes(
-      "only opens after you tap a button",
+      "opens only after you tap the button",
     ),
-    "zoom page does not auto-launch Zoom",
+    "zoom page does not auto-open the livestream",
   );
   await assert(
     (await page.getByTestId("zoom-frame").count()) === 0,
-    "zoom tab does not load a Zoom iframe until a join button is used",
+    "zoom tab does not embed the church page on load",
   );
-  const appHref = await page.getByTestId("zoom-join-app").getAttribute("href");
+  const watchHref = await page.getByTestId("zoom-watch-link").getAttribute("href");
   await assert(
-    appHref === "https://yale.zoom.us/j/91664467876",
-    `app join goes to the Zoom Workplace launch link: ${appHref}`,
+    watchHref === "https://saintthomashuntsville.org/live-stream-archives",
+    `watch link goes to the St. Thomas livestream: ${watchHref}`,
   );
-  await page.getByTestId("zoom-join-browser").click();
   await assert(
     page.url().includes("/zoom"),
-    "browser join stays on the Zoom tab",
-  );
-  const zoomSrc = await page.getByTestId("zoom-frame").getAttribute("src");
-  await assert(
-    zoomSrc === "https://yale.zoom.us/wc/join/91664467876",
-    `browser join loads the Zoom web client for this meeting: ${zoomSrc}`,
+    "opening the Zoom tab stays on the wedding site",
   );
 
   await page.getByTestId("tab-bar").getByRole("link", { name: "Registry" }).click();

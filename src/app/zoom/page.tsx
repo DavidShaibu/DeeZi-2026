@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 
-import { ZoomStage } from "@/components/zoom-stage";
-import { socialPreview } from "@/lib/site";
+import { PageShell, StoryText } from "@/components/page-shell";
+import { PageTitle } from "@/components/page-title";
+import { socialPreview, zoom } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Zoom",
-  description: `Watch ${socialPreview.title} live on Zoom.`,
+  description: `Watch ${socialPreview.title} live from St. Thomas Catholic Church.`,
   openGraph: {
     title: socialPreview.title,
     images: [socialPreview.image],
@@ -18,18 +19,27 @@ export const metadata: Metadata = {
 
 export default function ZoomPage() {
   return (
-    <main className="flex min-h-0 flex-1 flex-col bg-white px-3 pt-5 pb-3 sm:px-6 sm:pt-6">
-      <h1 className="font-script mb-2 text-center text-[2.55rem] leading-none text-[#2a2a2a] sm:text-5xl">
-        Zoom
-      </h1>
-      <p
-        className="font-serif mx-auto mb-4 max-w-xl text-center text-[1.05rem] leading-7 text-[#2f2f2f] sm:text-[1.12rem] sm:leading-8"
-        data-testid="zoom-message"
-      >
-        Watch the wedding live from wherever you are. Choose how to join — Zoom
-        only opens after you tap a button below.
+    <PageShell>
+      <PageTitle>Zoom</PageTitle>
+
+      <StoryText>
+        <span data-testid="zoom-message">
+          Watch the wedding live from St. Thomas Catholic Church. The livestream
+          opens only after you tap the button below.
+        </span>
+      </StoryText>
+
+      <p className="mt-10 text-center">
+        <a
+          href={zoom.streamUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          data-testid="zoom-watch-link"
+          className="inline-flex h-12 items-center rounded-full bg-[#2a2a2a] px-8 text-base font-medium text-white transition hover:bg-[#3a3a3a]"
+        >
+          Watch livestream
+        </a>
       </p>
-      <ZoomStage />
-    </main>
+    </PageShell>
   );
 }
