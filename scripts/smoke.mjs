@@ -70,7 +70,7 @@ try {
       JSON.stringify([
         "Our Story",
         "Schedule",
-        "Zoom",
+        "Livestream",
         "Where to Stay",
         "Registry",
         "RSVP",
@@ -84,7 +84,7 @@ try {
       JSON.stringify([
         "Our Story",
         "Schedule",
-        "Zoom",
+        "Livestream",
         "Where to Stay",
         "Registry",
         "RSVP",
@@ -170,30 +170,31 @@ try {
     `ceremony directions point at the church: ${directionsHref}`,
   );
 
-  await page.getByTestId("tab-bar").getByRole("link", { name: "Zoom" }).click();
-  await page.waitForURL("**/zoom");
+  await page.getByTestId("tab-bar").getByRole("link", { name: "Livestream" }).click();
+  await page.waitForURL("**/livestream");
   await assert(
-    (await page.getByRole("heading", { name: "Zoom" }).count()) === 1,
-    "zoom heading visible",
+    (await page.getByRole("heading", { name: "Livestream" }).count()) === 1,
+    "livestream heading visible",
   );
   await assert(
-    (await page.getByTestId("zoom-message").textContent())?.includes(
-      "opens only after you tap the button",
-    ),
-    "zoom page does not auto-open the livestream",
+    (await page.getByTestId("livestream-message").textContent())?.trim() ===
+      "Watch the wedding live from St. Thomas Catholic Church.",
+    "livestream copy matches the church sentence",
   );
   await assert(
     (await page.getByTestId("zoom-frame").count()) === 0,
-    "zoom tab does not embed the church page on load",
+    "livestream tab does not embed the church page on load",
   );
-  const watchHref = await page.getByTestId("zoom-watch-link").getAttribute("href");
+  const watchHref = await page
+    .getByTestId("livestream-watch-link")
+    .getAttribute("href");
   await assert(
     watchHref === "https://saintthomashuntsville.org/live-stream-archives",
     `watch link goes to the St. Thomas livestream: ${watchHref}`,
   );
   await assert(
-    page.url().includes("/zoom"),
-    "opening the Zoom tab stays on the wedding site",
+    page.url().includes("/livestream"),
+    "opening the Livestream tab stays on the wedding site",
   );
 
   await page.getByTestId("tab-bar").getByRole("link", { name: "Registry" }).click();

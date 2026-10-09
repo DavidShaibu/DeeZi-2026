@@ -6,7 +6,7 @@ There are seven pages:
 
 - **Our Story** — how they met, in their own words, with photos
 - **Schedule** — ceremony at St. Thomas Catholic Church and reception at Sky Blue Event Hall
-- **Zoom** — live stream from St. Thomas Catholic Church; the church page opens only after guests tap Watch livestream
+- **Livestream** — watch the wedding live from St. Thomas Catholic Church
 - **Where to Stay** — hotels in Huntsville, Texas, a countdown, and a map
 - **Registry** — cash gifts via Zelle (USD, account name + Zelle) and GTBank (naira)
 - **RSVP** — a short note and a link to the Google Form

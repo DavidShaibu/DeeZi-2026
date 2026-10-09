@@ -37,14 +37,14 @@ export const socialPreview = {
 export const navItems = [
   { href: "/", label: "Our Story" },
   { href: "/schedule", label: "Schedule" },
-  { href: "/zoom", label: "Zoom" },
+  { href: "/livestream", label: "Livestream" },
   { href: "/where-to-stay", label: "Where to Stay" },
   { href: "/registry", label: "Registry" },
   { href: "/rsvp", label: "RSVP" },
   { href: "/contact", label: "Contact Us" },
 ] as const;
 
-export const zoom = {
+export const livestream = {
   streamUrl: "https://saintthomashuntsville.org/live-stream-archives",
 } as const;
 
