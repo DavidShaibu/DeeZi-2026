@@ -37,7 +37,7 @@ export const socialPreview = {
 export const navItems = [
   { href: "/", label: "Our Story" },
   { href: "/schedule", label: "Schedule" },
-  // Zoom tab stays off until they ask to publish it.
+  { href: "/zoom", label: "Zoom" },
   { href: "/where-to-stay", label: "Where to Stay" },
   { href: "/registry", label: "Registry" },
   { href: "/rsvp", label: "RSVP" },

@@ -70,12 +70,13 @@ try {
       JSON.stringify([
         "Our Story",
         "Schedule",
+        "Zoom",
         "Where to Stay",
         "Registry",
         "RSVP",
         "Contact Us",
       ]),
-    `menu has six tabs: ${links.join(", ")}`,
+    `menu has seven tabs: ${links.join(", ")}`,
   );
   const tabLinks = await page.locator('[data-testid="tab-bar"] a').allTextContents();
   await assert(
@@ -83,16 +84,13 @@ try {
       JSON.stringify([
         "Our Story",
         "Schedule",
+        "Zoom",
         "Where to Stay",
         "Registry",
         "RSVP",
         "Contact Us",
       ]),
-    `horizontal tab bar has six tabs: ${tabLinks.join(", ")}`,
-  );
-  await assert(
-    !tabLinks.includes("Zoom"),
-    "Zoom tab is hidden until it is published",
+    `horizontal tab bar has seven tabs: ${tabLinks.join(", ")}`,
   );
   await page.getByTestId("close-menu").click();
 
@@ -172,7 +170,8 @@ try {
     `ceremony directions point at the church: ${directionsHref}`,
   );
 
-  await page.goto(`${base}/zoom`, { waitUntil: "networkidle" });
+  await page.getByTestId("tab-bar").getByRole("link", { name: "Zoom" }).click();
+  await page.waitForURL("**/zoom");
   await assert(
     (await page.getByRole("heading", { name: "Zoom" }).count()) === 1,
     "zoom heading visible",
